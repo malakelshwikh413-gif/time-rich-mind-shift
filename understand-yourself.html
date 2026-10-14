@@ -1,0 +1,816 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understand Yourself | TIME-RICH, MIND-SHIFT</title>
+
+    <style>
+        :root {
+            --dark-pink: #D6336C;
+            --bright-pink: #FF4081;
+            --light-pink: #FFB6C1;
+            --soft-white: #FFF5F8;
+            --black: #000000;
+            --purple: #462C7D;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Tahoma, sans-serif;
+            background: var(--soft-white);
+            color: var(--black);
+            line-height: 1.9;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        nav {
+            background: var(--white);
+            padding: 15px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            box-shadow: 0 3px 15px #00000010;
+        }
+
+        .logo {
+            color: var(--dark-pink);
+            font-size: 19px;
+            font-weight: bold;
+            direction: ltr;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--purple);
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: var(--bright-pink);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 35px;
+            padding: 65px 8%;
+            background: linear-gradient(135deg, #FFF5F8, #FFE0EA);
+        }
+
+        .hero h1 {
+            color: var(--purple);
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.25;
+            direction: ltr;
+            text-align: right;
+            margin-bottom: 18px;
+        }
+
+        .eyebrow {
+            color: var(--dark-pink);
+            font-weight: bold;
+            letter-spacing: 2px;
+            direction: ltr;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            margin-bottom: 22px;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 25px;
+            box-shadow: 0 12px 30px #462C7D20;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--dark-pink);
+            color: var(--white);
+            border: none;
+            border-radius: 30px;
+            padding: 11px 23px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--purple);
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 55px 8%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-heading h2 {
+            color: var(--purple);
+            font-size: 30px;
+            direction: ltr;
+        }
+
+        .section-heading p {
+            max-width: 700px;
+            margin: 8px auto 0;
+            color: #555;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .intro-grid img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .content-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 18px;
+            border-right: 5px solid var(--bright-pink);
+            box-shadow: 0 5px 18px #462C7D0D;
+        }
+
+        .content-card h3 {
+            color: var(--dark-pink);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .content-card p {
+            margin-bottom: 10px;
+        }
+
+        .strength-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .strength-card {
+            background: var(--white);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px #462C7D10;
+        }
+
+        .strength-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .strength-card div {
+            padding: 20px;
+        }
+
+        .strength-card h3 {
+            color: var(--purple);
+            margin-bottom: 8px;
+        }
+
+        .quote {
+            background: var(--purple);
+            color: var(--white);
+            text-align: center;
+            padding: 38px 8%;
+            font-size: 21px;
+        }
+
+        .quote p {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .quiz-section {
+            background: #FFE5EE;
+        }
+
+        .quiz-box {
+            max-width: 800px;
+            margin: auto;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 22px;
+            box-shadow: 0 8px 25px #462C7D12;
+        }
+
+        .quiz-note {
+            margin-bottom: 22px;
+            color: #555;
+        }
+
+        .question {
+            padding: 18px 0;
+            border-bottom: 1px solid #F2D7E1;
+        }
+
+        .question h3 {
+            color: var(--purple);
+            font-size: 17px;
+            margin-bottom: 12px;
+        }
+
+        .option {
+            display: block;
+            padding: 8px 12px;
+            margin: 7px 0;
+            border: 1px solid #F1D5E0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .option:hover {
+            background: var(--soft-white);
+            border-color: var(--bright-pink);
+        }
+
+        .option input {
+            margin-left: 8px;
+            accent-color: var(--dark-pink);
+        }
+
+        .quiz-actions {
+            margin-top: 22px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        #quiz-result {
+            display: none;
+            margin-top: 25px;
+            padding: 22px;
+            background: var(--soft-white);
+            border-radius: 15px;
+            border: 2px solid var(--light-pink);
+        }
+
+        #quiz-result h3 {
+            color: var(--dark-pink);
+            margin-bottom: 10px;
+        }
+
+        .result-tip {
+            margin-top: 12px;
+            color: var(--purple);
+            font-weight: bold;
+        }
+
+        .reflection {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .reflection img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .reflection ul {
+            padding-right: 22px;
+            margin-top: 12px;
+        }
+
+        .reflection li {
+            margin-bottom: 8px;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 10px 8% 55px;
+        }
+
+        .btn-secondary {
+            background: var(--purple);
+        }
+
+        footer {
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 25px 10px;
+        }
+
+        footer span {
+            color: var(--light-pink);
+        }
+
+        @media (max-width: 800px) {
+            .hero,
+            .intro-grid,
+            .reflection {
+                grid-template-columns: 1fr;
+            }
+
+            .strength-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero {
+                padding: 40px 6%;
+            }
+
+            section {
+                padding: 40px 6%;
+            }
+        }
+
+        @media (max-width: 520px) {
+            nav {
+                justify-content: center;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .strength-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quiz-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">TIME-RICH, MIND-SHIFT</a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="where-your-time-go.html">Time Audit</a>
+            <a href="understand-yourself.html">Understand Yourself</a>
+            <a href="discover-your-direction.html">Your Direction</a>
+            <a href="beat-procrastination.html">Beat Procrastination</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div>
+            <p class="eyebrow">CHAPTER 02</p>
+            <h1>UNDERSTAND YOURSELF</h1>
+
+            <p>
+                قبل ما تحاولي تغيّري طريقة استخدامك لوقتك، لازم تفهمي نفسك الأول.
+                اعرفي إيه اللي بيحفّزك، وإيه اللي بيشتتك، وإزاي بتاخدي قراراتك.
+                لأن التطوير الحقيقي بيبدأ من الوعي بنفسك، مش من مقارنة نفسك بالآخرين.
+            </p>
+
+            <a href="#self-discovery" class="btn">Start Your Journey</a>
+        </div>
+
+        <img
+            src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1200&q=85"
+            alt="A peaceful moment for self reflection"
+        >
+    </header>
+
+    <!-- INTRODUCTION -->
+    <section id="self-discovery">
+        <div class="section-heading">
+            <h2>WHY SELF-AWARENESS MATTERS</h2>
+            <p>فهم نفسك هو أول خطوة لبناء حياة أكثر توازنًا ووضوحًا.</p>
+        </div>
+
+        <div class="intro-grid">
+            <div class="content-card">
+                <h3>اعرفي نفسك قبل ما تطوريها</h3>
+
+                <p>
+                    الوعي بالذات معناه إنك تكوني فاهمة مشاعرك، وعاداتك،
+                    ونقاط قوتك، والحاجات اللي محتاجة تشتغلي عليها.
+                    لما تفهمي أسباب تصرفاتك، هتقدري تختاري حلول مناسبة ليكي
+                    بدل ما تكرري نفس الأخطاء كل مرة.
+                </p>
+
+                <p>
+                    مثلًا، لو بتأجلي المذاكرة باستمرار، ممكن يكون السبب
+                    مش الكسل؛ ممكن تكون المهمة كبيرة، أو مش واضحة، أو
+                    خايفة من النتيجة. معرفة السبب بتساعدك تختاري الحل الصح.
+                </p>
+            </div>
+
+            <img
+                src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=85"
+                alt="Notebook and workspace for personal reflection"
+            >
+        </div>
+    </section>
+
+    <!-- PERSONAL GROWTH -->
+    <section>
+        <div class="section-heading">
+            <h2>YOUR PERSONAL TOOLKIT</h2>
+            <p>فيه أربع حاجات تساعدك تفهمي نفسك وتستخدمي وقتك بشكل أفضل.</p>
+        </div>
+
+        <div class="strength-grid">
+            <article class="strength-card">
+                <img
+                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85"
+                    alt="Person learning and developing skills"
+                >
+                <div>
+                    <h3>01. Strengths</h3>
+                    <p>
+                        حددي الحاجات اللي بتعمليها كويس، زي حل المشكلات،
+                        أو التواصل، أو التعلم بسرعة. استخدمي نقاط قوتك
+                        في دراستك وحياتك اليومية.
+                    </p>
+                </div>
+            </article>
+
+            <article class="strength-card">
+                <img
+                    src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=900&q=85"
+                    alt="Calendar and planning tools"
+                >
+                <div>
+                    <h3>02. Habits</h3>
+                    <p>
+                        عاداتك اليومية بتأثر على وقتك وطاقتك.
+                        راقبي وقت استخدام الموبايل، ومواعيد نومك،
+                        والوقت اللي بتضيعيه من غير ما تحسي.
+                    </p>
+                </div>
+            </article>
+
+            <article class="strength-card">
+                <img
+                    src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=85"
+                    alt="Sunrise representing a fresh start"
+                >
+                <div>
+                    <h3>03. Values</h3>
+                    <p>
+                        اسألي نفسك إيه الأهم بالنسبة ليكي: التعلم،
+                        أو العائلة، أو الاستقلال، أو الصحة، أو النجاح.
+                        أولوياتك بتساعدك تختاري إزاي تستثمري وقتك.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- DISTRACTIONS -->
+    <section>
+        <div class="intro-grid">
+            <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85"
+                alt="Focused work and learning"
+            >
+
+            <div class="content-card">
+                <h3>04. Your Distractions</h3>
+
+                <p>
+                    كل شخص عنده حاجات بتقلل تركيزه، لكن المهم إنك تعرفي
+                    إيه أكتر حاجة بتأثر عليكي. ممكن تكون الإشعارات،
+                    أو التفكير الزائد، أو محاولة إنجاز حاجات كتير في نفس الوقت.
+                </p>
+
+                <p>
+                    جربي تلاحظي إمتى تركيزك بيكون أفضل، وإيه الظروف
+                    اللي بتساعدك تكملي المهمة. بعد كده قللي المشتتات
+                    وابدئي بأهم مهمة في الوقت اللي بتكوني فيه أكثر نشاطًا.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTE -->
+    <div class="quote">
+        <p>
+            "You cannot improve what you do not understand."
+            <br>
+            <span style="font-size: 16px; color: #FFB6C1;">
+                التطوير بيبدأ لما تفهمي نفسك بصدق.
+            </span>
+        </p>
+    </div>
+
+    <!-- SELF ASSESSMENT QUIZ -->
+    <section class="quiz-section" id="self-assessment">
+        <div class="section-heading">
+            <h2>SELF-DISCOVERY QUIZ</h2>
+            <p>
+                جاوبي على الأسئلة الجاية حسب تصرفاتك المعتادة،
+                مش حسب الصورة اللي تتمني تكوني عليها.
+            </p>
+        </div>
+
+        <div class="quiz-box">
+            <p class="quiz-note">
+                مفيش إجابة صح أو غلط. الاختبار ده للتأمل في عاداتك
+                ومساعدتك تحددي خطوة مناسبة للتطوير.
+            </p>
+
+            <form id="selfQuiz">
+
+                <div class="question">
+                    <h3>1. لما يكون عندك مهمة مهمة، بتتصرفي إزاي؟</h3>
+
+                    <label class="option">
+                        <input type="radio" name="q1" value="A" required>
+                        ببدأ وبقسمها لخطوات صغيرة.
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="q1" value="B">
+                        ساعات ببدأ وساعات بأجلها.
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="q1" value="C">
+                        غالبًا بأجلها لحد ما الوقت يضغطني.
+                    </label>
+                </div>
+
+                <div class="question">
+                    <h3>2. لما حاجة تشتتك أثناء المذاكرة أو الشغل، بتعملي إيه؟</h3>
+
+                    <label class="option">
+                        <input type="radio" name="q2" value="A" required>
+                        بحاول أبعد المشتت وأرجع للمهمة.
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="q2" value="B">
+                        برجع للمهمة، لكن بعد وقت.
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="q2" value="C">
+                        ساعات بنسى المهمة وأكمل في المشتت.
+                    </label>
+                </div>
+
+                <div class="question">
+                    <h3>3. هل بتحددي أولوياتك قبل بداية اليوم؟</h3>
+
+                    <label class="option">
+                        <input type="radio" name="q3" value="A" required>
+                        أيوه، بحدد أهم الحاجات اللي لازم أخلصها.
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="q3" value="B">
+                        أحيانًا، حسب اليوم والظروف.
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="q3" value="C">
+                        لأ، غالبًا بقرر أعمل إيه وقتها.
+                    </label>
+                </div>
+
+                <div class="question">
+                    <h3>4. لما تحققي نتيجة مش مرضية، بتعملي إيه؟</h3>
+
+                    <label class="option">
+                        <input type="radio" name="q4" value="A" required>
+                        براجع اللي حصل وأتعلم من الغلط.
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="q4" value="B">
+                        بزعل شوية وبعدها بحاول أكمل.
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="q4" value="C">
+                        بفقد الحماس وبلاقي صعوبة في الرجوع.
+                    </label>
+                </div>
+
+                <div class="question">
+                    <h3>5. هل عندك فكرة واضحة عن هدف عايزة توصلي له؟</h3>
+
+                    <label class="option">
+                        <input type="radio" name="q5" value="A" required>
+                        أيوه، وعندي خطوات أقدر أبدأ بيها.
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="q5" value="B">
+                        عندي فكرة، لكن محتاجة أوضحها.
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="q5" value="C">
+                        لسه بدور على الاتجاه المناسب ليا.
+                    </label>
+                </div>
+
+                <div class="quiz-actions">
+                    <button type="submit" class="btn">Discover My Result</button>
+                    <button type="reset" class="btn btn-secondary">
+                        Try Again
+                    </button>
+                </div>
+
+            </form>
+
+            <div id="quiz-result" aria-live="polite">
+                <h3 id="result-title"></h3>
+                <p id="result-description"></p>
+                <p class="result-tip" id="result-tip"></p>
+                <p style="font-size: 13px; margin-top: 12px; color: #666;">
+                    النتيجة انعكاس مبدئي لإجاباتك، وليست اختبارًا علميًا
+                    للشخصية أو حكمًا ثابتًا على قدراتك.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- REFLECTION ACTION -->
+    <section>
+        <div class="reflection">
+            <div>
+                <div class="section-heading" style="text-align: right; margin-bottom: 15px;">
+                    <h2>YOUR NEXT STEP</h2>
+                </div>
+
+                <h3 style="color: #D6336C; margin-bottom: 10px;">
+                    حوّلي الوعي إلى فعل
+                </h3>
+
+                <p>
+                    فهم نفسك مش معناه إنك لازم تغيري كل حاجة مرة واحدة.
+                    اختاري عادة واحدة محتاجة تحسين، وابدئي بتغيير صغير
+                    تقدري تلتزمي بيه.
+                </p>
+
+                <ul>
+                    <li>اكتبي نقطة قوة واحدة عندك.</li>
+                    <li>حددي عادة واحدة بتاخد من وقتك.</li>
+                    <li>اختاري هدفًا صغيرًا للأسبوع الجاي.</li>
+                    <li>راجعي تقدمك في نهاية الأسبوع من غير ما تقسّي على نفسك.</li>
+                </ul>
+            </div>
+
+            <img
+                src="https://images.unsplash.com/photo-1455390582262-044crost?auto=format&fit=crop&w=1000&q=85"
+                alt="Writing personal goals in a notebook"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=85';"
+            >
+        </div>
+    </section>
+
+    <!-- PAGE NAVIGATION -->
+    <div class="navigation-buttons">
+        <a href="where-your-time-go.html" class="btn btn-secondary">
+            Previous: Time Audit
+        </a>
+
+        <a href="discover-your-direction.html" class="btn">
+            Next: Discover Your Direction
+        </a>
+    </div>
+
+    <footer>
+        <p>
+            <span>TIME-RICH, MIND-SHIFT</span> |
+            The Self-Upgrade Playbook
+        </p>
+        <p style="font-size: 13px; margin-top: 5px;">
+            Understand yourself. Build better habits. Create your future.
+        </p>
+    </footer>
+
+    <script>
+        const quiz = document.getElementById("selfQuiz");
+        const resultBox = document.getElementById("quiz-result");
+
+        quiz.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            if (!quiz.reportValidity()) {
+                return;
+            }
+
+            const answers = new FormData(quiz);
+            let a = 0;
+            let b = 0;
+            let c = 0;
+
+            for (let i = 1; i <= 5; i++) {
+                const answer = answers.get("q" + i);
+
+                if (answer === "A") {
+                    a++;
+                } else if (answer === "B") {
+                    b++;
+                } else if (answer === "C") {
+                    c++;
+                }
+            }
+
+            let title = "";
+            let description = "";
+            let tip = "";
+
+            if (a >= b && a >= c) {
+                title = "Your Result: The Conscious Builder";
+                description =
+                    "إجاباتك بتشير إن عندك عادات مفيدة في التخطيط، " +
+                    "أو التركيز، أو التعلم من التجارب. حافظي على الحاجات " +
+                    "اللي بتساعدك، وافتكري إن التطور المستمر أهم من الكمال.";
+
+                tip =
+                    "Your Next Step: اختاري هدفًا واحدًا للأسبوع ده، " +
+                    "وحددي وقتًا ثابتًا للعمل عليه.";
+            } else if (b >= a && b >= c) {
+                title = "Your Result: The Growing Explorer";
+                description =
+                    "إجاباتك بتشير إن عندك بعض العادات الجيدة، لكن " +
+                    "استمرارها ممكن يتأثر بضغط اليوم أو ظروفه. " +
+                    "الخطوات الصغيرة والثابتة هتساعدك تبني روتينًا أفضل.";
+
+                tip =
+                    "Your Next Step: اكتبي أهم 3 مهام لليوم، " +
+                    "وابدئي بأهم مهمة لمدة 15 دقيقة.";
+            } else {
+                title = "Your Result: The Fresh Starter";
+                description =
+                    "إجاباتك بتشير إنك ممكن تستفيدي من بداية أبسط " +
+                    "وتنظيم أوضح. ده مش معناه إنك مش قادرة تنجحي؛ " +
+                    "معناه إن عندك فرصة تكتشفي إيه اللي بيساعدك " +
+                    "تبدئي وتكملي.";
+
+                tip =
+                    "Your Next Step: اختاري مهمة صغيرة جدًا، " +
+                    "وابدئي فيها لمدة 10 دقائق مع إبعاد الموبايل.";
+            }
+
+            document.getElementById("result-title").textContent = title;
+            document.getElementById("result-description").textContent = description;
+            document.getElementById("result-tip").textContent = tip;
+
+            resultBox.style.display = "block";
+            resultBox.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        });
+
+        quiz.addEventListener("reset", function() {
+            resultBox.style.display = "none";
+        });
+    </script>
+
+</body>
+</html>

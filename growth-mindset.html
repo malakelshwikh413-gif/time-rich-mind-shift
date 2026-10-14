@@ -1,0 +1,1292 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Mindset | TIME-RICH, MIND-SHIFT</title>
+
+    <style>
+        :root {
+            --dark-pink: #D6336C;
+            --bright-pink: #FF4081;
+            --light-pink: #FFB6C1;
+            --soft-white: #FFF5F8;
+            --black: #000000;
+            --purple: #462C7D;
+            --white: #FFFFFF;
+            --gray: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+            background: var(--soft-white);
+            color: var(--black);
+            line-height: 1.9;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        button, input, textarea, select {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .topbar {
+            background: var(--white);
+            border-bottom: 3px solid var(--light-pink);
+            padding: 17px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .brand {
+            direction: ltr;
+            text-align: left;
+            font-size: 19px;
+            font-weight: 800;
+            color: var(--purple);
+        }
+
+        .brand span {
+            display: block;
+            font-size: 11px;
+            color: var(--dark-pink);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .nav-links a {
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .nav-links a:hover {
+            color: var(--bright-pink);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--purple), var(--dark-pink));
+            color: var(--white);
+            padding: 60px 7%;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .chapter-label {
+            display: inline-block;
+            direction: ltr;
+            border: 1px solid rgba(255,255,255,0.7);
+            padding: 5px 15px;
+            border-radius: 25px;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            direction: ltr;
+            text-align: right;
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.3;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: var(--light-pink);
+        }
+
+        .hero p {
+            font-size: 15px;
+            color: #fff0f5;
+        }
+
+        .hero img {
+            height: 330px;
+            border-radius: 20px;
+            border: 4px solid rgba(255,255,255,0.35);
+        }
+
+        .hero-button {
+            display: inline-block;
+            background: var(--white);
+            color: var(--purple);
+            padding: 11px 22px;
+            border-radius: 25px;
+            font-weight: 800;
+            margin-top: 22px;
+        }
+
+        .hero-button:hover {
+            background: var(--light-pink);
+        }
+
+        .container {
+            max-width: 1160px;
+            margin: auto;
+            padding: 45px 22px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .eyebrow {
+            direction: ltr;
+            color: var(--dark-pink);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .section-heading h2 {
+            color: var(--purple);
+            font-size: clamp(25px, 3vw, 34px);
+            margin: 5px 0;
+        }
+
+        .section-heading p {
+            max-width: 720px;
+            margin: auto;
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .intro {
+            background: var(--white);
+            padding: 23px 25px;
+            border-right: 5px solid var(--bright-pink);
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        .intro h3 {
+            color: var(--dark-pink);
+            margin-bottom: 7px;
+        }
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .topic-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #f3dce6;
+            box-shadow: 0 6px 22px rgba(70,44,125,0.06);
+        }
+
+        .topic-card img {
+            height: 220px;
+        }
+
+        .topic-content {
+            padding: 23px;
+        }
+
+        .topic-number {
+            direction: ltr;
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--dark-pink);
+        }
+
+        .topic-content h3 {
+            color: var(--purple);
+            font-size: 21px;
+            margin: 5px 0 12px;
+        }
+
+        .topic-content p {
+            color: #333333;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .topic-content ul {
+            padding-right: 21px;
+            font-size: 14px;
+        }
+
+        .topic-content li {
+            margin-bottom: 6px;
+        }
+
+        .tip {
+            background: var(--soft-white);
+            border-right: 3px solid var(--bright-pink);
+            border-radius: 8px;
+            padding: 12px 14px;
+            font-size: 13px;
+            margin-top: 15px;
+        }
+
+        .tip strong {
+            color: var(--dark-pink);
+        }
+
+        .comparison-section,
+        .exercise-section,
+        .quiz-section {
+            margin-top: 65px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 23px;
+        }
+
+        .mindset-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 22px rgba(70,44,125,0.07);
+        }
+
+        .mindset-card img {
+            height: 260px;
+        }
+
+        .mindset-content {
+            padding: 23px;
+        }
+
+        .mindset-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .fixed h3 {
+            color: var(--dark-pink);
+        }
+
+        .growth h3 {
+            color: var(--purple);
+        }
+
+        .mindset-content p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .mindset-content ul {
+            padding-right: 20px;
+            font-size: 14px;
+        }
+
+        .mindset-quote {
+            background: #f0eafa;
+            color: var(--purple);
+            text-align: center;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 22px;
+            font-weight: 700;
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 25px;
+        }
+
+        .example {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 13px;
+            border-bottom: 4px solid var(--light-pink);
+        }
+
+        .example h3 {
+            color: var(--purple);
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .example p {
+            color: #444444;
+            font-size: 13px;
+        }
+
+        .exercise-card,
+        .quiz-card {
+            background: var(--white);
+            padding: 27px;
+            border: 1px solid #f2d8e3;
+            border-radius: 17px;
+            box-shadow: 0 6px 22px rgba(70,44,125,0.06);
+        }
+
+        .exercise-card h3,
+        .quiz-card h3 {
+            color: var(--purple);
+            margin-bottom: 7px;
+        }
+
+        .exercise-description {
+            color: var(--gray);
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 700;
+            font-size: 13px;
+            margin: 15px 0 6px;
+        }
+
+        .exercise-card input,
+        .exercise-card textarea,
+        .quiz-card select {
+            width: 100%;
+            padding: 11px 12px;
+            border: 1px solid #e4cad5;
+            border-radius: 8px;
+            background: #fffafd;
+            outline: none;
+        }
+
+        .exercise-card textarea {
+            min-height: 95px;
+            resize: vertical;
+        }
+
+        .exercise-card input:focus,
+        .exercise-card textarea:focus,
+        .quiz-card select:focus {
+            border-color: var(--bright-pink);
+            box-shadow: 0 0 0 3px rgba(255,64,129,0.1);
+        }
+
+        .primary-button {
+            background: var(--dark-pink);
+            color: var(--white);
+            border: none;
+            padding: 11px 19px;
+            border-radius: 9px;
+            font-weight: 800;
+            margin-top: 15px;
+        }
+
+        .primary-button:hover {
+            background: var(--purple);
+        }
+
+        .secondary-button {
+            background: var(--soft-white);
+            color: var(--purple);
+            border: 1px solid var(--light-pink);
+            padding: 9px 16px;
+            border-radius: 9px;
+            font-weight: 700;
+        }
+
+        .exercise-result,
+        .quiz-result {
+            display: none;
+            margin-top: 22px;
+            padding: 20px;
+            border-radius: 12px;
+            background: var(--soft-white);
+            border-right: 4px solid var(--bright-pink);
+        }
+
+        .exercise-result h4,
+        .quiz-result h4 {
+            color: var(--purple);
+            margin-bottom: 8px;
+        }
+
+        .exercise-result p,
+        .quiz-result p {
+            font-size: 14px;
+            margin-bottom: 9px;
+        }
+
+        .quiz-question {
+            padding: 17px 0;
+            border-bottom: 1px solid #f1dfe7;
+        }
+
+        .quiz-question p {
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .quiz-question select {
+            margin-top: 5px;
+        }
+
+        .closing {
+            margin-top: 60px;
+            background: linear-gradient(135deg, var(--purple), var(--dark-pink));
+            color: var(--white);
+            padding: 40px 25px;
+            text-align: center;
+            border-radius: 18px;
+        }
+
+        .closing h2 {
+            font-size: 27px;
+            margin-bottom: 12px;
+        }
+
+        .closing p {
+            max-width: 740px;
+            margin: auto;
+            color: #fff0f5;
+        }
+
+        .closing strong {
+            color: var(--light-pink);
+        }
+
+        .page-navigation {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .page-navigation a {
+            background: var(--white);
+            border: 1px solid var(--light-pink);
+            padding: 11px 17px;
+            border-radius: 9px;
+            color: var(--purple);
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .page-navigation a:hover {
+            background: var(--light-pink);
+        }
+
+        footer {
+            margin-top: 20px;
+            background: var(--purple);
+            color: var(--white);
+            padding: 25px 15px;
+            text-align: center;
+        }
+
+        footer .footer-brand {
+            direction: ltr;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        footer p {
+            color: #f4eafa;
+            font-size: 12px;
+        }
+
+        @media (max-width: 800px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 40px 6%;
+            }
+
+            .hero img {
+                height: 260px;
+            }
+
+            .topic-grid,
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .example-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar {
+                justify-content: center;
+            }
+
+            .brand {
+                text-align: center;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 15px;
+            }
+
+            .topic-content,
+            .exercise-card,
+            .quiz-card {
+                padding: 19px;
+            }
+
+            .page-navigation {
+                flex-direction: column;
+            }
+
+            .page-navigation a {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="topbar">
+    <a href="index.html" class="brand">
+        TIME-RICH, MIND-SHIFT
+        <span>THE SELF-UPGRADE PLAYBOOK</span>
+    </a>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="where-your-time-go.html">Time Audit</a>
+        <a href="understand-yourself.html">Self-Awareness</a>
+        <a href="discover-your-direction.html">Your Direction</a>
+        <a href="beat-procrastination.html">Beat Procrastination</a>
+        <a href="success-stories.html">Success Stories</a>
+        <a href="resources.html">Resources</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <span class="chapter-label">CHAPTER 05 · PERSONAL GROWTH</span>
+
+        <h1>GROWTH <span>MINDSET</span></h1>
+
+        <p>
+            مش كل حاجة في حياتنا هتمشي زي ما خططنا، ومش كل محاولة هتنجح
+            من أول مرة. لكن طريقة تفكيرنا في التحديات والأخطاء ممكن تساعدنا
+            نتعلم ونتطور. في الفصل ده هنتعلم إزاي نبني عقلية مرنة،
+            ونتعامل مع الفشل والنقد والمقارنة بطريقة صحية تساعدنا نكمل.
+        </p>
+
+        <a href="#topics" class="hero-button">Explore the Topics ←</a>
+    </div>
+
+    <img
+        src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1000&q=85"
+        alt="طريق مضيء وسط الطبيعة يرمز للنمو والتغيير"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80';"
+    >
+</section>
+
+<main class="container">
+
+    <section class="intro">
+        <h3>A New Way to See Yourself</h3>
+        <p>
+            تخيلي إنك حاولتي تتعلمي مهارة جديدة، لكن أخطأتي كذا مرة.
+            ممكن تقولي لنفسك: "أنا مش شاطرة في الموضوع ده"، وممكن تقولي:
+            "أنا لسه بتعلم ومحتاجة أجرب طريقة تانية".
+            الموقف واحد، لكن طريقة تفسيره مختلفة. عقلية النمو بتشجعنا
+            نشوف قدراتنا على إنها قابلة للتطور بالتعلم والممارسة،
+            بدل ما نعتبر كل خطأ حكمًا نهائيًا على نفسنا.
+        </p>
+    </section>
+
+    <section id="topics">
+        <div class="section-heading">
+            <div class="eyebrow">LEARN TO GROW</div>
+            <h2>Five Topics for a Stronger Mindset</h2>
+            <p>
+                خمس موضوعات تساعدك تتعاملي مع التحديات بشكل أفضل
+                وتبني ثقة مبنية على التعلم والتجربة.
+            </p>
+        </div>
+
+        <div class="topic-grid">
+
+            <!-- Topic 1 -->
+            <article class="topic-card">
+                <img
+                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+                    alt="التعلم والعمل على الكمبيوتر"
+                    loading="lazy"
+                >
+
+                <div class="topic-content">
+                    <span class="topic-number">TOPIC 01</span>
+                    <h3>Fixed Mindset vs. Growth Mindset</h3>
+
+                    <p>
+                        الـ Fixed Mindset هي طريقة تفكير بتخلينا نعتقد
+                        إن قدراتنا محدودة وثابتة، وإن الغلط معناه إننا
+                        مش موهوبين أو مش هنقدر ننجح.
+                    </p>
+
+                    <p>
+                        أما الـ Growth Mindset فبتشجعنا نؤمن إننا نقدر
+                        نطوّر مهاراتنا بالتعلم والممارسة، مع الاعتراف
+                        إن الناس عندها قدرات وظروف مختلفة.
+                    </p>
+
+                    <ul>
+                        <li>بدل "أنا مش بعرف"، قولي "أنا لسه بتعلم".</li>
+                        <li>بدل تجنب التحديات، جربيها بخطوات مناسبة.</li>
+                        <li>بدل اعتبار الخطأ نهاية، اسألي نفسك اتعلمتِ إيه.</li>
+                    </ul>
+
+                    <div class="tip">
+                        <strong>Remember:</strong>
+                        عقلية النمو مش معناها إنك هتقدري تعملي أي حاجة
+                        بسهولة؛ معناها إنك تدي نفسك فرصة للتعلم والتحسن.
+                    </div>
+                </div>
+            </article>
+
+            <!-- Topic 2 -->
+            <article class="topic-card">
+                <img
+                    src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=900&q=80"
+                    alt="التخطيط ومراجعة الخطوات"
+                    loading="lazy"
+                >
+
+                <div class="topic-content">
+                    <span class="topic-number">TOPIC 02</span>
+                    <h3>Learn from Failure</h3>
+
+                    <p>
+                        الفشل أو النتيجة غير المتوقعة ممكن يكونوا
+                        محبطين، لكنهم كمان فرصة تراجعي بيها طريقتك.
+                        المهم إنك تفرقي بين إن محاولة معينة ما نجحتش،
+                        وبين إنك تحكمي على نفسك كلها بالفشل.
+                    </p>
+
+                    <p>بعد أي تجربة صعبة، اسألي نفسك:</p>
+
+                    <ul>
+                        <li>إيه اللي حصل فعلًا، من غير مبالغة أو لوم؟</li>
+                        <li>إيه الجزء اللي كان تحت سيطرتي؟</li>
+                        <li>إيه اللي أقدر أغيره في المحاولة الجاية؟</li>
+                        <li>هل محتاجة وقتًا أكتر، أو مساعدة، أو طريقة مختلفة؟</li>
+                    </ul>
+
+                    <p>
+                        مش كل نتيجة سيئة هتتحول تلقائيًا لنجاح، لكن
+                        مراجعة التجربة بتساعدك تستفيدي منها بدل تكرار
+                        نفس الأخطاء من غير فهم.
+                    </p>
+
+                    <div class="tip">
+                        <strong>Try this:</strong>
+                        اكتبي درسًا واحدًا اتعلمتيه من موقف صعب،
+                        وخطوة واحدة هتجربيها بشكل مختلف.
+                    </div>
+                </div>
+            </article>
+
+            <!-- Topic 3 -->
+            <article class="topic-card">
+                <img
+                    src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=900&q=80"
+                    alt="التأمل والهدوء"
+                    loading="lazy"
+                >
+
+                <div class="topic-content">
+                    <span class="topic-number">TOPIC 03</span>
+                    <h3>Emotional Resilience</h3>
+
+                    <p>
+                        المرونة النفسية هي قدرتك على التعامل مع الضغط
+                        والتغيرات والصعوبات، والتكيف معاها بشكل يساعدك
+                        تكملي حياتك. مش معناها إنك متزعليش أو متتعبيش؛
+                        معناها إنك تتعلمي تتعاملي مع مشاعرك وتطلبي دعمًا
+                        لما تحتاجي.
+                    </p>
+
+                    <ul>
+                        <li>خدي وقتًا تفهمي مشاعرك قبل ما تتصرفي.</li>
+                        <li>فرقي بين الحاجة اللي تقدري تغيريها واللي مش بإيدك.</li>
+                        <li>اطلبي مساعدة من شخص موثوق عند الحاجة.</li>
+                        <li>اهتمي بالنوم والراحة والعلاقات الداعمة.</li>
+                        <li>ارجعي للخطوات الصغيرة بدل محاولة حل كل شيء مرة واحدة.</li>
+                    </ul>
+
+                    <p>
+                        المرونة مش إنك تتحملي كل شيء لوحدك، ومش معناها
+                        إنك تفضلي في وضع مؤذٍ. أحيانًا القوة الحقيقية
+                        تكون في طلب المساعدة أو تغيير الطريق.
+                    </p>
+
+                    <div class="tip">
+                        <strong>Remember:</strong>
+                        مش مطلوب منك تكوني قوية طول الوقت؛ مسموح لك
+                        تتعبي وتاخدي راحة وتطلبي الدعم.
+                    </div>
+                </div>
+            </article>
+
+            <!-- Topic 4 -->
+            <article class="topic-card">
+                <img
+                    src="https://images.unsplash.com/photo-1455390582262-044crost?auto=format&fit=crop&w=900&q=80"
+                    alt="الكتابة والتفكير في الأفكار"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1455390582262-044crost?auto=format&fit=crop&w=900&q=80';"
+                >
+
+                <div class="topic-content">
+                    <span class="topic-number">TOPIC 04</span>
+                    <h3>Self-Talk and Self-Confidence</h3>
+
+                    <p>
+                        الكلام اللي بنقوله لنفسنا بيأثر على إحساسنا
+                        بالمواقف وعلى استعدادنا للمحاولة. لو كل غلطة
+                        بتتحول في دماغنا لجملة زي "أنا فاشلة"، ممكن
+                        نخاف نجرب مرة تانية.
+                    </p>
+
+                    <p>
+                        مش مطلوب منك تكرري كلامًا إيجابيًا مش مقتنعة بيه،
+                        لكن حاولي تتكلمي مع نفسك بواقعية ورحمة، زي ما
+                        ممكن تتكلمي مع صديقة بتحاولي تساعديها.
+                    </p>
+
+                    <ul>
+                        <li>"أنا غلطت" بدل "أنا دايمًا بفشل".</li>
+                        <li>"محتاجه أتدرب" بدل "أنا مش موهوبة".</li>
+                        <li>"هبدأ باللي أعرفه" بدل "لازم أفهم كل حاجة الأول".</li>
+                        <li>"ممكن أطلب المساعدة" بدل "لازم أعمل كل شيء لوحدي".</li>
+                    </ul>
+
+                    <div class="tip">
+                        <strong>Remember:</strong>
+                        الثقة بالنفس مش معناها إنك متشكّيش أبدًا؛
+                        معناها إنك تقدري تتحركي حتى لو عندك بعض الشكوك.
+                    </div>
+                </div>
+            </article>
+
+            <!-- Topic 5 -->
+            <article class="topic-card">
+                <img
+                    src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80"
+                    alt="أشخاص يتعاونون ويتبادلون الأفكار"
+                    loading="lazy"
+                >
+
+                <div class="topic-content">
+                    <span class="topic-number">TOPIC 05</span>
+                    <h3>Feedback, Comparison and Continuous Learning</h3>
+
+                    <p>
+                        التعليقات والملاحظات من الآخرين ممكن تساعدك
+                        تكتشفي حاجات مش واخدة بالك منها، لكن مش كل
+                        نقد صحيح أو مفيد. اتعلمي تميزي بين الملاحظة
+                        المحددة اللي تساعدك تتحسني، وبين الكلام الجارح
+                        اللي مش بيقدم حلًا.
+                    </p>
+
+                    <p>
+                        كمان مقارنة نفسك بالناس طول الوقت ممكن تخليك
+                        تنسي ظروفك وخطواتك الخاصة. بدل ما تقارني بدايتك
+                        بمنتصف رحلة شخص تاني، قارني مستواك الحالي
+                        بالمستوى اللي كنتِ عليه قبل كده.
+                    </p>
+
+                    <ul>
+                        <li>اسألي عن أمثلة محددة تساعدك تفهمي الملاحظة.</li>
+                        <li>اختاري النصيحة المناسبة من شخص موثوق.</li>
+                        <li>تابعي تقدمك الشخصي بدل متابعة إنجازات الآخرين فقط.</li>
+                        <li>خلي عندك فضول تتعلمي مهارات جديدة باستمرار.</li>
+                    </ul>
+
+                    <div class="tip">
+                        <strong>Try this:</strong>
+                        اختاري مهارة واحدة واحتفظي بسجل بسيط يوضح
+                        إيه اللي اتعلمتيه وإيه اللي اتحسن مع الوقت.
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Mindset Comparison -->
+    <section class="comparison-section">
+        <div class="section-heading">
+            <div class="eyebrow">CHANGE THE WAY YOU THINK</div>
+            <h2>Two Ways to Respond to a Challenge</h2>
+            <p>
+                نفس الموقف ممكن يخلينا نفكر بطريقتين مختلفتين.
+                شوفي الفرق بين رد الفعل اللي يقفل باب التعلم،
+                ورد الفعل اللي يفتح فرصة للتطور.
+            </p>
+        </div>
+
+        <div class="comparison-grid">
+
+            <article class="mindset-card fixed">
+                <img
+                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=80"
+                    alt="شخص يواجه تحديًا أثناء العمل"
+                    loading="lazy"
+                >
+
+                <div class="mindset-content">
+                    <h3>❌ Fixed Mindset</h3>
+
+                    <p>
+                        "لو مش عارفة أعملها من أول مرة، يبقى أنا مش شاطرة."
+                    </p>
+
+                    <ul>
+                        <li>تجنب التجارب اللي ممكن يحصل فيها خطأ.</li>
+                        <li>اعتبار النقد هجومًا على الشخصية.</li>
+                        <li>الاستسلام بسرعة لما المهمة تبقى صعبة.</li>
+                        <li>التركيز على إثبات القدرة بدل تطويرها.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="mindset-card growth">
+                <img
+                    src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1000&q=80"
+                    alt="شخص يتعلم ويعمل على تطوير مهاراته"
+                    loading="lazy"
+                >
+
+                <div class="mindset-content">
+                    <h3>✓ Growth Mindset</h3>
+
+                    <p>
+                        "المهمة دي صعبة بالنسبة لي دلوقتي، لكن ممكن
+                        أتعلم وأجرب طريقة مختلفة."
+                    </p>
+
+                    <ul>
+                        <li>تجربة خطوات جديدة والتعلم من النتائج.</li>
+                        <li>استخدام الملاحظات المفيدة لتطوير الأداء.</li>
+                        <li>الصبر على التعلم مع طلب المساعدة عند الحاجة.</li>
+                        <li>التركيز على التقدم بدل الكمال.</li>
+                    </ul>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="mindset-quote">
+            "I can't do it yet" is different from "I can't do it."
+            <br>
+            كلمة "لسه" بتفكرك إن التعلم رحلة مستمرة، مش حكم نهائي على قدراتك.
+        </div>
+    </section>
+
+    <!-- Real-life examples -->
+    <section style="margin-top: 65px;">
+        <div class="section-heading">
+            <div class="eyebrow">PRACTICE IN REAL LIFE</div>
+            <h2>How to Apply a Growth Mindset</h2>
+            <p>
+                أمثلة بسيطة لمواقف يومية تقدري تتعاملي معاها
+                بطريقة تساعدك تتعلمي بدل ما تتوقفي.
+            </p>
+        </div>
+
+        <div class="example-grid">
+            <article class="example">
+                <h3>01. A Difficult Exam</h3>
+                <p>
+                    لو نتيجتك أقل من المتوقع، راجعي نوع الأسئلة اللي
+                    غلطتي فيها، وحددي هل محتاجة تدريبًا إضافيًا أو
+                    طريقة مذاكرة مختلفة.
+                </p>
+            </article>
+
+            <article class="example">
+                <h3>02. Learning a New Skill</h3>
+                <p>
+                    لو الكود مش شغال أو التصميم مش زي ما تخيلتي،
+                    اختبري جزءًا صغيرًا، واقرئي رسالة الخطأ،
+                    وجربي تعديلًا واحدًا في كل مرة.
+                </p>
+            </article>
+
+            <article class="example">
+                <h3>03. Receiving Criticism</h3>
+                <p>
+                    اسمعي الملاحظة بهدوء، وحددي الجزء المفيد منها،
+                    واسألي عن مثال واضح. مش لازم تتفقي مع كل نقد
+                    عشان تستفيدي من بعضه.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Interactive Reflection -->
+    <section class="exercise-section">
+        <div class="section-heading">
+            <div class="eyebrow">YOUR PERSONAL REFLECTION</div>
+            <h2>Turn a Challenge into a Learning Plan</h2>
+            <p>
+                اكتبي عن تحدٍ بتواجهيه، وحوّليه لخطة صغيرة
+                تقدري ترجعي لها وقت ما تحتاجي.
+            </p>
+        </div>
+
+        <div class="exercise-card">
+            <h3>My Growth Worksheet</h3>
+
+            <p class="exercise-description">
+                مفيش إجابات مثالية. اكتبي إجابات صادقة تساعدك
+                تفهمي الموقف وتحددي الخطوة اللي تقدري تعمليها.
+            </p>
+
+            <form id="growthForm">
+                <label class="form-label" for="challenge">
+                    1. What challenge are you facing?
+                </label>
+
+                <textarea
+                    id="challenge"
+                    placeholder="مثال: عندي صعوبة في تعلم البرمجة..."
+                    required
+                ></textarea>
+
+                <label class="form-label" for="oldThought">
+                    2. What do you usually tell yourself?
+                </label>
+
+                <textarea
+                    id="oldThought"
+                    placeholder="مثال: أنا مش هعرف أتعلمها..."
+                    required
+                ></textarea>
+
+                <label class="form-label" for="newThought">
+                    3. How can you reframe this thought?
+                </label>
+
+                <textarea
+                    id="newThought"
+                    placeholder="مثال: أنا لسه بتعلم وممكن أبدأ بخطوة صغيرة..."
+                    required
+                ></textarea>
+
+                <label class="form-label" for="nextStep">
+                    4. What is one action you can take?
+                </label>
+
+                <input
+                    type="text"
+                    id="nextStep"
+                    placeholder="مثال: أتدرب على مثال واحد لمدة 15 دقيقة"
+                    required
+                >
+
+                <button class="primary-button" type="submit">
+                    Create My Growth Plan
+                </button>
+            </form>
+
+            <div class="exercise-result" id="growthResult" aria-live="polite">
+                <h4>Your Personal Growth Plan</h4>
+                <p id="resultChallenge"></p>
+                <p id="resultOldThought"></p>
+                <p id="resultNewThought"></p>
+                <p id="resultNextStep"></p>
+
+                <button class="secondary-button" id="copyPlan" type="button">
+                    Copy My Plan
+                </button>
+
+                <p id="copyMessage" aria-live="polite"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mini Quiz -->
+    <section class="quiz-section">
+        <div class="section-heading">
+            <div class="eyebrow">CHECK YOUR UNDERSTANDING</div>
+            <h2>Growth Mindset Mini Quiz</h2>
+            <p>
+                اختبري فهمك للأفكار اللي اتعلمتيها في الفصل.
+            </p>
+        </div>
+
+        <div class="quiz-card">
+            <h3>Choose the Best Answer</h3>
+
+            <form id="mindsetQuiz">
+
+                <div class="quiz-question">
+                    <p>1. You make a mistake while learning something new. What should you do?</p>
+
+                    <select id="q1" required>
+                        <option value="">Choose an answer</option>
+                        <option value="a">Stop trying because you are not talented.</option>
+                        <option value="b">Understand the mistake and try a different approach.</option>
+                        <option value="c">Pretend the mistake never happened.</option>
+                    </select>
+                </div>
+
+                <div class="quiz-question">
+                    <p>2. What does emotional resilience mean?</p>
+
+                    <select id="q2" required>
+                        <option value="">Choose an answer</option>
+                        <option value="a">Never feeling sad or stressed.</option>
+                        <option value="b">Handling challenges and seeking support when needed.</option>
+                        <option value="c">Solving every problem alone.</option>
+                    </select>
+                </div>
+
+                <div class="quiz-question">
+                    <p>3. What is a helpful way to respond to feedback?</p>
+
+                    <select id="q3" required>
+                        <option value="">Choose an answer</option>
+                        <option value="a">Treat every comment as a personal attack.</option>
+                        <option value="b">Ignore all feedback.</option>
+                        <option value="c">Look for useful, specific information you can apply.</option>
+                    </select>
+                </div>
+
+                <div class="quiz-question">
+                    <p>4. What is a growth mindset?</p>
+
+                    <select id="q4" required>
+                        <option value="">Choose an answer</option>
+                        <option value="a">Believing skills can develop through learning and practice.</option>
+                        <option value="b">Believing success should always be easy.</option>
+                        <option value="c">Believing mistakes mean you cannot improve.</option>
+                    </select>
+                </div>
+
+                <button class="primary-button" type="submit">
+                    Check My Answers
+                </button>
+
+                <button class="secondary-button" type="button" id="resetQuiz">
+                    Try Again
+                </button>
+            </form>
+
+            <div class="quiz-result" id="quizResult" aria-live="polite">
+                <h4 id="quizScore"></h4>
+                <p id="quizFeedback"></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="closing">
+        <h2>You Are Allowed to Be a Beginner</h2>
+
+        <p>
+            مش مطلوب منك تعرفي كل حاجة، ولا تنجحي في كل محاولة.
+            المهم إنك تفضلي مستعدة تتعلمي وتراجعي خطواتك وتطلبي
+            المساعدة لما تحتاجي.
+            <strong>خلي هدفك إنك تتحسني تدريجيًا، مش إنك تكوني
+            مثالية من أول يوم.</strong>
+        </p>
+    </section>
+
+    <nav class="page-navigation">
+        <a href="beat-procrastination.html">
+            ← Previous: Beat Procrastination
+        </a>
+
+        <a href="success-stories.html">
+            Next: Success Stories →
+        </a>
+
+        <a href="index.html">
+            Back to Home ↑
+        </a>
+    </nav>
+
+</main>
+
+<footer>
+    <div class="footer-brand">TIME-RICH, MIND-SHIFT</div>
+    <p>THE SELF-UPGRADE PLAYBOOK</p>
+    <p>Learn from challenges. Grow with intention. Keep moving forward.</p>
+</footer>
+
+<script>
+    // =====================================
+    // GROWTH WORKSHEET
+    // =====================================
+
+    const growthForm = document.getElementById("growthForm");
+    const growthResult = document.getElementById("growthResult");
+    const copyPlanButton = document.getElementById("copyPlan");
+    const copyMessage = document.getElementById("copyMessage");
+
+    let personalPlan = "";
+
+    growthForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const challenge = document.getElementById("challenge").value.trim();
+        const oldThought = document.getElementById("oldThought").value.trim();
+        const newThought = document.getElementById("newThought").value.trim();
+        const nextStep = document.getElementById("nextStep").value.trim();
+
+        if (!challenge || !oldThought || !newThought || !nextStep) {
+            return;
+        }
+
+        document.getElementById("resultChallenge").textContent =
+            "Challenge: " + challenge;
+
+        document.getElementById("resultOldThought").textContent =
+            "Old thought: " + oldThought;
+
+        document.getElementById("resultNewThought").textContent =
+            "New perspective: " + newThought;
+
+        document.getElementById("resultNextStep").textContent =
+            "My next action: " + nextStep;
+
+        personalPlan =
+            "MY GROWTH PLAN\n\n" +
+            "Challenge: " + challenge + "\n" +
+            "Old thought: " + oldThought + "\n" +
+            "New perspective: " + newThought + "\n" +
+            "My next action: " + nextStep;
+
+        growthResult.style.display = "block";
+        copyMessage.textContent = "";
+
+        growthResult.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+        });
+    });
+
+    copyPlanButton.addEventListener("click", async function() {
+        if (!personalPlan) {
+            return;
+        }
+
+        try {
+            await navigator.clipboard.writeText(personalPlan);
+            copyMessage.textContent = "Your plan has been copied!";
+        } catch (error) {
+            const temporaryArea = document.createElement("textarea");
+            temporaryArea.value = personalPlan;
+            temporaryArea.style.position = "fixed";
+            temporaryArea.style.opacity = "0";
+
+            document.body.appendChild(temporaryArea);
+            temporaryArea.select();
+
+            const copied = document.execCommand("copy");
+            temporaryArea.remove();
+
+            copyMessage.textContent = copied
+                ? "Your plan has been copied!"
+                : "Copy was unavailable. You can select and copy the text manually.";
+        }
+    });
+
+
+    // =====================================
+    // GROWTH MINDSET QUIZ
+    // =====================================
+
+    const mindsetQuiz = document.getElementById("mindsetQuiz");
+    const quizResult = document.getElementById("quizResult");
+    const quizScore = document.getElementById("quizScore");
+    const quizFeedback = document.getElementById("quizFeedback");
+
+    const correctAnswers = {
+        q1: "b",
+        q2: "b",
+        q3: "c",
+        q4: "a"
+    };
+
+    mindsetQuiz.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        let score = 0;
+
+        for (const question in correctAnswers) {
+            const answer = document.getElementById(question).value;
+
+            if (answer === correctAnswers[question]) {
+                score++;
+            }
+        }
+
+        quizScore.textContent = "Your Score: " + score + " / 4";
+
+        if (score === 4) {
+            quizFeedback.textContent =
+                "Excellent! You understand the main principles of a growth mindset. Keep applying them in everyday situations.";
+        } else if (score >= 2) {
+            quizFeedback.textContent =
+                "Good work! Review the topics you found difficult, then try the quiz again.";
+        } else {
+            quizFeedback.textContent =
+                "Keep learning! Read the five topics again and remember: mistakes are a normal part of learning.";
+        }
+
+        quizResult.style.display = "block";
+
+        quizResult.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+        });
+    });
+
+    document.getElementById("resetQuiz").addEventListener("click", function() {
+        mindsetQuiz.reset();
+        quizResult.style.display = "none";
+    });
+</script>
+
+</body>
+</html>

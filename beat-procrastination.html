@@ -1,449 +1,1499 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beat Procrastination & Distractions | TIME-RICH, MIND-SHIFT</title>
+    <title>Beat Procrastination | TIME-RICH, MIND-SHIFT</title>
+
     <style>
+        :root {
+            --dark-pink: #D6336C;
+            --bright-pink: #FF4081;
+            --light-pink: #FFB6C1;
+            --soft-white: #FFF5F8;
+            --black: #000000;
+            --purple: #462C7D;
+            --white: #FFFFFF;
+            --gray: #666666;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, Tahoma, sans-serif;
-            background-color: #f5f7fb;
-            color: #17243d;
+            font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+            background: var(--soft-white);
+            color: var(--black);
             line-height: 1.9;
         }
 
-        header {
-            background-color: #101c35;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .logo {
-            color: white;
-            font-size: 19px;
-            font-weight: bold;
-            direction: ltr;
-        }
-
-        nav a {
-            color: white;
+        a {
             text-decoration: none;
-            margin-right: 18px;
-            font-size: 14px;
+            color: inherit;
         }
 
-        nav a:hover {
-            color: #80b5ff;
+        button,
+        input,
+        select {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .topbar {
+            background: var(--white);
+            border-bottom: 3px solid var(--light-pink);
+            padding: 17px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            color: var(--purple);
+            font-size: 19px;
+            font-weight: 800;
+            direction: ltr;
+            text-align: left;
+        }
+
+        .brand span {
+            display: block;
+            color: var(--dark-pink);
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 17px;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            font-weight: 700;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--bright-pink);
         }
 
         .hero {
-            background: linear-gradient(135deg, #101c35, #244b83);
-            color: white;
-            text-align: center;
-            padding: 75px 20px;
+            background: linear-gradient(135deg, #462C7D, #D6336C);
+            color: var(--white);
+            padding: 65px 7%;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
         }
 
-        .step {
-            color: #9ec8ff;
-            font-size: 13px;
-            letter-spacing: 2px;
-            direction: ltr;
+        .chapter-label {
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.7);
+            border-radius: 25px;
+            padding: 5px 15px;
+            font-size: 12px;
+            margin-bottom: 15px;
         }
 
         .hero h1 {
-            font-size: 36px;
-            margin: 15px 0;
+            font-size: clamp(32px, 5vw, 53px);
+            line-height: 1.3;
             direction: ltr;
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--light-pink);
         }
 
         .hero p {
-            max-width: 720px;
+            max-width: 620px;
+            font-size: 16px;
+            color: #fff0f5;
+        }
+
+        .hero img {
+            height: 330px;
+            border-radius: 22px;
+            border: 4px solid rgba(255,255,255,0.35);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .hero-button {
+            display: inline-block;
+            background: var(--white);
+            color: var(--purple);
+            padding: 11px 23px;
+            border-radius: 25px;
+            margin-top: 23px;
+            font-weight: 800;
+            transition: 0.2s;
+        }
+
+        .hero-button:hover {
+            background: var(--light-pink);
+            transform: translateY(-2px);
+        }
+
+        .page-container {
+            max-width: 1180px;
             margin: auto;
-            color: #e1eaf8;
-            font-size: 17px;
+            padding: 45px 22px;
         }
 
-        .container {
-            width: 85%;
-            max-width: 950px;
-            margin: 50px auto;
-        }
-
-        .section-title {
+        .section-heading {
             text-align: center;
             margin-bottom: 30px;
         }
 
-        .section-title span {
-            color: #3479d4;
-            font-size: 13px;
-            font-weight: bold;
+        .section-heading .eyebrow {
+            color: var(--dark-pink);
+            font-size: 12px;
             letter-spacing: 2px;
+            font-weight: 800;
             direction: ltr;
-            display: block;
         }
 
-        .section-title h2 {
-            font-size: 28px;
-            margin-top: 8px;
-            color: #101c35;
+        .section-heading h2 {
+            color: var(--purple);
+            font-size: clamp(25px, 3vw, 34px);
+            margin: 5px 0;
         }
 
-        .article-card {
-            background-color: white;
-            padding: 30px;
-            margin-bottom: 25px;
+        .section-heading p {
+            max-width: 720px;
+            margin: auto;
+            color: var(--gray);
+            font-size: 15px;
+        }
+
+        .intro-box {
+            background: var(--white);
+            border-right: 5px solid var(--bright-pink);
+            padding: 23px 26px;
             border-radius: 12px;
-            box-shadow: 0 4px 18px rgba(16, 28, 53, 0.06);
-            border-right: 4px solid #3479d4;
+            margin-bottom: 38px;
+            box-shadow: 0 5px 20px rgba(70,44,125,0.06);
         }
 
-        .article-card h3 {
-            color: #244b83;
+        .intro-box h3 {
+            color: var(--dark-pink);
+            margin-bottom: 8px;
+        }
+
+        .topics {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .topic-card {
+            background: var(--white);
+            border-radius: 17px;
+            overflow: hidden;
+            box-shadow: 0 6px 22px rgba(70,44,125,0.07);
+            border: 1px solid #f5dce6;
+        }
+
+        .topic-card img {
+            height: 220px;
+        }
+
+        .topic-content {
+            padding: 24px;
+        }
+
+        .topic-number {
+            display: inline-block;
+            color: var(--dark-pink);
+            font-weight: 800;
+            font-size: 12px;
+            direction: ltr;
+        }
+
+        .topic-content h3 {
+            color: var(--purple);
+            margin: 5px 0 12px;
+            font-size: 21px;
+        }
+
+        .topic-content p {
+            color: #333333;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .topic-content ul {
+            padding-right: 21px;
+            color: #333333;
+            font-size: 14px;
+        }
+
+        .topic-content li {
+            margin-bottom: 6px;
+        }
+
+        .tip {
+            background: var(--soft-white);
+            border-right: 3px solid var(--bright-pink);
+            padding: 12px 14px;
+            margin-top: 16px;
+            border-radius: 7px;
+            font-size: 13px;
+        }
+
+        .tip strong {
+            color: var(--dark-pink);
+        }
+
+        .comparison-section {
+            margin-top: 65px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .comparison-card {
+            background: var(--white);
+            border-radius: 17px;
+            overflow: hidden;
+            box-shadow: 0 6px 22px rgba(70,44,125,0.08);
+        }
+
+        .comparison-card img {
+            height: 290px;
+        }
+
+        .comparison-card .comparison-content {
+            padding: 23px;
+        }
+
+        .comparison-card h3 {
             font-size: 22px;
-            margin-bottom: 12px;
+            margin-bottom: 9px;
         }
 
-        .article-card p {
-            font-size: 16px;
-            color: #4a5568;
-            margin-bottom: 12px;
+        .procrastination h3 {
+            color: var(--dark-pink);
         }
 
-        .highlight {
-            background-color: #eaf2ff;
-            padding: 25px;
+        .action h3 {
+            color: var(--purple);
+        }
+
+        .comparison-card p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .comparison-card ul {
+            padding-right: 20px;
+            font-size: 14px;
+        }
+
+        .comparison-note {
+            margin-top: 23px;
+            background: #f1eafa;
             border-radius: 12px;
+            padding: 19px 22px;
             text-align: center;
-            margin: 30px 0;
-            color: #244b83;
-            font-size: 18px;
-            font-weight: bold;
+            color: var(--purple);
+            font-weight: 600;
+        }
+
+        .takeaways {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 17px;
+            margin-top: 28px;
+        }
+
+        .takeaway {
+            background: var(--white);
+            padding: 21px;
+            text-align: center;
+            border-radius: 13px;
+            border-bottom: 4px solid var(--bright-pink);
+        }
+
+        .takeaway .symbol {
+            font-size: 28px;
+            color: var(--dark-pink);
+        }
+
+        .takeaway h3 {
+            color: var(--purple);
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        .takeaway p {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        .tools-section {
+            margin-top: 65px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            align-items: start;
         }
 
         .tool-card {
-            background-color: white;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 4px 18px rgba(16, 28, 53, 0.07);
+            background: var(--white);
+            border: 1px solid #f2d8e3;
+            border-radius: 17px;
+            padding: 25px;
+            box-shadow: 0 6px 22px rgba(70,44,125,0.06);
         }
 
         .tool-card h3 {
-            font-size: 24px;
-            color: #101c35;
-            margin-bottom: 10px;
-            text-align: center;
+            color: var(--purple);
+            font-size: 22px;
+            margin-bottom: 7px;
         }
 
         .tool-description {
-            text-align: center;
-            color: #667085;
-            margin-bottom: 25px;
+            color: var(--gray);
+            font-size: 13px;
+            margin-bottom: 18px;
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
+        .form-label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #253858;
+            font-size: 13px;
+            font-weight: 700;
+            margin: 13px 0 6px;
         }
 
-        .form-group select, .form-group textarea {
+        .tool-card input,
+        .tool-card select {
             width: 100%;
-            padding: 13px;
-            border: 1px solid #ccd5e2;
+            padding: 11px 12px;
+            border: 1px solid #e4cad5;
             border-radius: 8px;
-            font-size: 15px;
+            background: #fffafd;
             outline: none;
-            font-family: Arial, Tahoma, sans-serif;
         }
 
-        .form-group select:focus, .form-group textarea:focus {
-            border-color: #3479d4;
+        .tool-card input:focus,
+        .tool-card select:focus {
+            border-color: var(--bright-pink);
+            box-shadow: 0 0 0 3px rgba(255,64,129,0.1);
         }
 
-        .action-button {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            background-color: #244b83;
-            color: white;
+        .primary-button {
+            background: var(--dark-pink);
+            color: var(--white);
             border: none;
-            border-radius: 8px;
-            font-size: 17px;
-            font-weight: bold;
-            cursor: pointer;
+            border-radius: 9px;
+            padding: 11px 17px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .primary-button:hover {
+            background: var(--purple);
+        }
+
+        .secondary-button {
+            background: var(--soft-white);
+            color: var(--purple);
+            border: 1px solid var(--light-pink);
+            border-radius: 9px;
+            padding: 9px 13px;
+            font-weight: 700;
+        }
+
+        .secondary-button:hover {
+            background: var(--light-pink);
+        }
+
+        .full-button {
+            width: 100%;
             margin-top: 15px;
         }
 
-        .action-button:hover {
-            background-color: #3479d4;
+        .task-list {
+            list-style: none;
+            margin-top: 20px;
         }
 
-        .result-box {
-            display: none;
-            margin-top: 25px;
-            padding: 22px;
-            background-color: #edf4ff;
-            border-radius: 10px;
-            border-right: 4px solid #3479d4;
+        .task-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f2e1e8;
         }
 
-        .result-box h4 {
-            color: #244b83;
-            font-size: 19px;
-            margin-bottom: 10px;
+        .task-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--dark-pink);
+            flex-shrink: 0;
         }
 
-        .result-box p {
-            color: #253858;
-            font-size: 16px;
+        .task-text {
+            flex: 1;
+            min-width: 0;
+            overflow-wrap: anywhere;
+            font-size: 14px;
         }
 
-        .next-step {
+        .task-text small {
+            display: block;
+            color: var(--gray);
+            font-size: 11px;
+        }
+
+        .task-item.done .task-text {
+            text-decoration: line-through;
+            color: #888888;
+        }
+
+        .delete-button {
+            background: none;
+            border: none;
+            color: var(--dark-pink);
+            font-size: 12px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .task-summary {
+            margin-top: 17px;
+            font-size: 13px;
+            color: var(--purple);
+            font-weight: 700;
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 9px;
+            border-radius: 20px;
+            background: #f3dce6;
+            overflow: hidden;
+            margin-top: 9px;
+        }
+
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--bright-pink), var(--purple));
+            transition: width 0.3s;
+        }
+
+        .timer-card {
             text-align: center;
-            margin-top: 45px;
-            padding: 30px;
-            background-color: #101c35;
-            color: white;
-            border-radius: 12px;
         }
 
-        .next-step h3 {
-            font-size: 23px;
-            margin-bottom: 10px;
+        .timer-face {
+            margin: 22px auto;
+            width: min(230px, 100%);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FFF5F8, #f0e6ff);
+            border: 8px solid var(--light-pink);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0 0 0 4px white;
         }
 
-        .next-step p {
-            color: #dce5f3;
-            margin-bottom: 20px;
+        .timer-time {
+            font-size: 45px;
+            font-weight: 800;
+            color: var(--purple);
+            direction: ltr;
+            line-height: 1.3;
         }
 
-        .next-button {
+        .timer-label {
+            color: var(--dark-pink);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .timer-controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 9px;
+        }
+
+        .timer-message {
+            margin-top: 15px;
+            color: var(--gray);
+            font-size: 13px;
+            min-height: 25px;
+        }
+
+        .focus-rules {
+            text-align: right;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #f2e1e8;
+        }
+
+        .focus-rules h4 {
+            color: var(--purple);
+            margin-bottom: 9px;
+        }
+
+        .focus-rules ul {
+            padding-right: 20px;
+            font-size: 13px;
+            color: #444444;
+        }
+
+        .closing {
+            margin-top: 60px;
+            background: linear-gradient(135deg, var(--purple), var(--dark-pink));
+            color: var(--white);
+            text-align: center;
+            padding: 42px 25px;
+            border-radius: 19px;
+        }
+
+        .closing h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .closing p {
+            max-width: 720px;
+            margin: auto;
+            color: #fff0f5;
+        }
+
+        .closing strong {
+            color: var(--light-pink);
+        }
+
+        .page-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 35px;
+        }
+
+        .page-navigation a {
             display: inline-block;
-            background-color: #ffffff;
-            color: #244b83;
-            text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 7px;
-            font-weight: bold;
+            padding: 11px 18px;
+            border: 1px solid var(--light-pink);
+            border-radius: 10px;
+            color: var(--purple);
+            background: var(--white);
+            font-size: 13px;
+            font-weight: 800;
         }
 
-        .next-button:hover {
-            background-color: #dceaff;
+        .page-navigation a:hover {
+            background: var(--light-pink);
         }
 
         footer {
-            background-color: #101c35;
-            color: #dce5f3;
+            background: var(--purple);
+            color: var(--white);
             text-align: center;
-            padding: 25px;
-            margin-top: 60px;
-            font-size: 13px;
+            padding: 25px 15px;
+            margin-top: 20px;
         }
 
-        @media (max-width: 650px) {
-            header {
+        footer p {
+            font-size: 12px;
+            color: #f4eafa;
+        }
+
+        footer .footer-brand {
+            direction: ltr;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 800px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 42px 6%;
+            }
+
+            .hero img {
+                height: 260px;
+            }
+
+            .topics,
+            .comparison-grid,
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .takeaways {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .brand {
+                text-align: center;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-container {
+                padding: 30px 15px;
+            }
+
+            .topic-content,
+            .tool-card {
+                padding: 19px;
+            }
+
+            .comparison-card img {
+                height: 230px;
+            }
+
+            .timer-time {
+                font-size: 38px;
+            }
+
+            .page-navigation {
                 flex-direction: column;
             }
 
-            nav a {
-                margin: 0 7px;
-            }
-
-            .hero h1 {
-                font-size: 28px;
-            }
-
-            .container {
-                width: 92%;
-            }
-
-            .article-card, .tool-card {
-                padding: 22px;
+            .page-navigation a {
+                text-align: center;
             }
         }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <div class="logo">TIME-RICH, MIND-SHIFT</div>
-        <nav>
-            <a href="index.html">الرئيسية</a>
-            <a href="time-audit.html">تحليل الوقت</a>
-            <a href="understand-yourself.html">فهم الذات</a>
-            <a href="#focus-tool">مُحلل المشتتات</a>
-            <a href="discover-your-direction.html">اكتشف اتجاهك</a>
+    <!-- Navigation -->
+    <header class="topbar">
+        <a href="index.html" class="brand">
+            TIME-RICH, MIND-SHIFT
+            <span>THE SELF-UPGRADE PLAYBOOK</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="where-your-time-go.html">Time Audit</a>
+            <a href="understand-yourself.html">Self-Awareness</a>
+            <a href="discover-your-direction.html">Your Direction</a>
+            <a href="#tools">Take Action</a>
         </nav>
     </header>
 
+    <!-- Hero -->
     <section class="hero">
-        <div class="step">STEP 03 · FOCUS & ACTION</div>
-        <h1>BEAT PROCRASTINATION</h1>
-        <p>
-            تغلب على التشتت والتسويف، وتعلّم كيف تحول النوايا والأهداف إلى خطوات إنجاز واقعية وفعالة.
-        </p>
+        <div>
+            <span class="chapter-label">CHAPTER 04 · FINAL CHAPTER</span>
+
+            <h1>BEAT <span>PROCRASTINATION</span></h1>
+
+            <p>
+                المماطلة مش معناها إنك شخص كسول، لكنها ممكن تكون نتيجة الخوف
+                أو التشتت أو إن المهمة تبدو أكبر من قدرتك على البدء.
+                في الفصل ده هتفهم أسباب المماطلة، وتتعلم إزاي تحوّل نيتك
+                لخطوات حقيقية وتبدأ تنجز أهدافك يومًا بعد يوم.
+            </p>
+
+            <a href="#topics" class="hero-button">Start Taking Action ←</a>
+        </div>
+
+        <img
+            src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1000&q=85"
+            alt="طالب يذاكر ويكتب ملاحظات"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=80';"
+        >
     </section>
 
-    <main class="container">
+    <main class="page-container">
 
-        <!-- الجزء النظرى -->
-        <section id="article">
-
-            <div class="section-title">
-                <span>FOCUS & PRODUCTIVITY</span>
-                <h2>التغلب على التسويف والمشتتات</h2>
-            </div>
-
-            <div class="article-card">
-                <h3>1. لماذا نسوف ونؤجل المهام؟</h3>
-                <p>
-                    التسويف ليس مجرد كسل أو سوء تنظيم للوقت، بل هو غالبًا محاولة للهروب من مشاعر عدم الراحة، مثل الخوف من الفشل، أو الشعور بأن المهمة ضخمة ومعقدة، أو عدم وجود هدف واضح من البداية.
-                </p>
-                <p>
-                    عندما نؤجل مهمة مهمة ونستبدلها بنشاط أسهل (مثل تصفح وسائل التواصل)، يشعر العقل براحة مؤقتة، لكن هذا الشعور سرعان ما يتحول إلى ضغط نفسي وتوتر مع اقتراب المواعيد النهائية.
-                </p>
-            </div>
-
-            <div class="article-card">
-                <h3>2. التحكم في المشتتات الرقمية</h3>
-                <p>
-                    في عالمنا اليوم، تُعد الإشعارات والتطبيقات المشتت الأكبر للتركيز. كل إشعار يلتقط انتباهك يحتاج عقلك بعده إلى عدة دقائق ليستعيد مستواه السابق من التركيز والعمق.
-                </p>
-                <p>
-                    الحل لا يكمن في إلغاء التكنولوجيا، بل في وضع حدود واضحة لها، مثل تفعيل وضع عدم الإزعاج أثناء فترة العمل، وإبعاد الهاتف عن مكان الدراسة.
-                </p>
-            </div>
-
-            <div class="article-card">
-                <h3>3. استراتيجيات عملية للانجاز</h3>
-                <p>
-                    <strong>قاعدة الـ 5 دقائق:</strong> أخبر نفسك أنك ستعمل على المهمة لمدة 5 دقائق فقط. غالبًا ما يكون البدء هو الجزء الأصبح، وبمجرد أن تبدأ، يسهل عليك الاستمرار.
-                </p>
-                <p>
-                    <strong>تقسيم المهام:</strong> لا تضع في جدولك "إنهاء المشروع"، بل قسمه إلى خطوات صغيرة جداً (مثل: كتابة المقدمة، أو تجهيز العناوين الرئيسية).
-                </p>
-            </div>
-
-            <div class="highlight">
-                التركيز لا يعني العمل طوال الوقت، بل حماية وقتك من المشتتات لتنجز في وقت أقل وبجودة أعلى.
-            </div>
-
-        </section>
-
-        <!-- التفاعل والتطبيق -->
-        <section id="focus-tool">
-
-            <div class="section-title">
-                <span>PRACTICAL TOOL</span>
-                <h2>مُحلل المشتتات وخطة التركيز</h2>
-            </div>
-
-            <div class="tool-card">
-                <h3>تحديد المشتت الخفي</h3>
-                <p class="tool-description">
-                    حدد أكبر مشتت يواجهك حالياً، واكتشف الخطة المناسبة للتعامل معه والتغلب عليه.
-                </p>
-
-                <div class="form-group">
-                    <label for="distractor">ما هو أكبر مشتت يعطل إنجازك عادةً؟</label>
-                    <select id="distractor">
-                        <option value="">-- اختر المشتت الرئيسي --</option>
-                        <option value="phone">الإشعارات ووسائل التواصل الاجتماعي</option>
-                        <option value="overwhelmed">الشعور بأن المهمة كبيرة وصعبة جداً</option>
-                        <option value="perfectionism">البحث عن الكمالية والرغبة في جعل كل شيء مثالياً</option>
-                        <option value="fatigue">الإرهاق وقلة الطاقة والتركيز</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="actionCommitment">اكتب التزاماً صغيراً ستطبقه اليوم لتقليل هذا المشتت:</label>
-                    <textarea id="actionCommitment" placeholder="مثال: سأضع الهاتف في غرفة أخرى أثناء الدراسة لمدة ساعة..."></textarea>
-                </div>
-
-                <button class="action-button" onclick="analyzeDistraction()">تحليل الحل واظهار الخطة</button>
-
-                <div class="result-box" id="resultBox" aria-live="polite">
-                    <h4 id="planTitle">الخطة المقترحة:</h4>
-                    <p id="planText"></p>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- الخطوة التالية -->
-        <section class="next-step">
-            <h3>الخطوة التالية: اكتشف اتجاهك واصنع خطتك</h3>
+        <!-- Introduction -->
+        <section class="intro-box">
+            <h3>Before You Begin: Understand the Real Problem</h3>
             <p>
-                بعد أن عرفت كيف تحمي وقتك وتتغلب على التشتت، حان الوقت لتحديد أهدافك واكتشف اتجاهك المستقبلي بوضوح.
+                كلنا أحيانًا بنأجل مهام مهمة، حتى لو عارفين إن تأجيلها هيزود
+                الضغط علينا بعدين. المشكلة مش دايمًا في قلة الوقت؛ أحيانًا
+                بتكون في طريقة تعاملنا مع المهمة نفسها. الهدف مش إنك تبقى
+                منتج كل دقيقة، لكن إنك تتعلم تبدأ في الوقت المناسب، وتستخدم
+                وقتك بوعي، وتسمح لنفسك بالراحة من غير شعور دائم بالذنب.
             </p>
-            <a href="discover-your-direction.html" class="next-button">اكتشف اتجاهك الآن ←</a>
         </section>
+
+        <!-- Five Topics -->
+        <section id="topics">
+            <div class="section-heading">
+                <div class="eyebrow">LEARN · PRACTICE · IMPROVE</div>
+                <h2>Five Topics to Help You Take Control</h2>
+                <p>
+                    خمس أفكار أساسية تساعدك تفهم المماطلة وتبني طريقة عملية
+                    للتغلب عليها.
+                </p>
+            </div>
+
+            <div class="topics">
+
+                <!-- Topic 1 -->
+                <article class="topic-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80"
+                        alt="مكتب ومفكرة لتنظيم المهام"
+                        loading="lazy"
+                    >
+
+                    <div class="topic-content">
+                        <span class="topic-number">TOPIC 01</span>
+                        <h3>What Is Procrastination?</h3>
+
+                        <p>
+                            المماطلة هي إنك تأجل مهمة المفروض تبدأ فيها،
+                            وتستبدلها بحاجة أسهل أو أكثر متعة، رغم إنك عارف
+                            إن التأجيل ممكن يسبب لك مشكلة بعدين.
+                        </p>
+
+                        <p>
+                            مثلًا: عندك مشروع لازم تخلصه، لكن بدل ما تبدأ
+                            فيه، تفضل تتفرج على الفيديوهات وتقول لنفسك:
+                            "هبدأ بعد شوية". المشكلة إن الشوية ممكن يتحولوا
+                            لساعات أو أيام.
+                        </p>
+
+                        <p>
+                            المماطلة مختلفة عن الراحة. الراحة بتساعدك تستعيد
+                            طاقتك، أما المماطلة فغالبًا بتخليك تتجنب مهمة
+                            محتاج تتعامل معاها.
+                        </p>
+
+                        <div class="tip">
+                            <strong>Remember:</strong>
+                            مش لازم تكون مستعد بنسبة 100% عشان تبدأ.
+                            أحيانًا البداية نفسها هي اللي بتساعدك تتحمس.
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Topic 2 -->
+                <article class="topic-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+                        alt="شخص يستخدم اللابتوب وسط مهام متعددة"
+                        loading="lazy"
+                    >
+
+                    <div class="topic-content">
+                        <span class="topic-number">TOPIC 02</span>
+                        <h3>Why Do We Procrastinate?</h3>
+
+                        <p>
+                            عشان تتغلب على المماطلة، مهم تعرف السبب اللي
+                            بيخليك تأجل. الأسباب مش واحدة عند كل الناس،
+                            وممكن يكون عندك أكتر من سبب في نفس الوقت.
+                        </p>
+
+                        <ul>
+                            <li>
+                                <strong>Fear of Failure:</strong>
+                                الخوف من إن النتيجة متكونش كويسة، فيخليك
+                                تأجل المحاولة نفسها.
+                            </li>
+                            <li>
+                                <strong>Perfectionism:</strong>
+                                إنك تستنى الظروف المثالية أو تحاول تعمل
+                                كل حاجة بشكل كامل من أول مرة.
+                            </li>
+                            <li>
+                                <strong>Overwhelm:</strong>
+                                لما المهمة تكون كبيرة ومش عارف تبدأ منين.
+                            </li>
+                            <li>
+                                <strong>Distractions:</strong>
+                                الموبايل والإشعارات والتنقل المستمر بين
+                                التطبيقات.
+                            </li>
+                            <li>
+                                <strong>Low Energy:</strong>
+                                الإرهاق أو قلة النوم أو عدم أخذ فترات راحة.
+                            </li>
+                        </ul>
+
+                        <div class="tip">
+                            <strong>Try this:</strong>
+                            اسأل نفسك: "أنا بأجل المهمة دي ليه؟"
+                            تحديد السبب بيساعدك تختار الحل المناسب بدل
+                            ما تلوم نفسك وخلاص.
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Topic 3 -->
+                <article class="topic-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=900&q=80"
+                        alt="مفكرة وقائمة مهام للتخطيط"
+                        loading="lazy"
+                    >
+
+                    <div class="topic-content">
+                        <span class="topic-number">TOPIC 03</span>
+                        <h3>Break Big Tasks into Small Steps</h3>
+
+                        <p>
+                            لما تبص لمهمة كبيرة زي مذاكرة مادة كاملة أو
+                            إنهاء مشروع، ممكن تحس إنها صعبة جدًا. لكن لما
+                            تقسمها لخطوات صغيرة، هتعرف تبدأ وتتابع تقدمك.
+                        </p>
+
+                        <p>
+                            بدل ما تكتب "أخلص المشروع"، اكتب خطوات واضحة:
+                        </p>
+
+                        <ul>
+                            <li>أفتح الملفات وأراجع المطلوب.</li>
+                            <li>أحدد العناوين الرئيسية.</li>
+                            <li>أشتغل على أول جزء لمدة 15 دقيقة.</li>
+                            <li>أراجع اللي خلصته وأحدد الخطوة التالية.</li>
+                        </ul>
+
+                        <p>
+                            كل خطوة صغيرة بتقلل الإحساس إن المهمة مستحيلة،
+                            وبتديك فرصة تشوف تقدم حقيقي بدل ما تفضل تفكر
+                            في حجم الشغل كله.
+                        </p>
+
+                        <div class="tip">
+                            <strong>Remember:</strong>
+                            متفكرش في كل الخطوات مرة واحدة؛ ركز على
+                            الخطوة التالية فقط.
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Topic 4 -->
+                <article class="topic-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=80"
+                        alt="الكتابة والمذاكرة بتركيز"
+                        loading="lazy"
+                    >
+
+                    <div class="topic-content">
+                        <span class="topic-number">TOPIC 04</span>
+                        <h3>Build Focus and Better Habits</h3>
+
+                        <p>
+                            التركيز مش معناه إنك تشتغل لساعات طويلة من غير
+                            توقف. معناه إنك توجه انتباهك لمهمة واحدة لمدة
+                            مناسبة، وتقلل الحاجات اللي بتقطع تركيزك.
+                        </p>
+
+                        <ul>
+                            <li>
+                                <strong>Pomodoro Technique:</strong>
+                                جرب تركز 25 دقيقة، وبعدها خد راحة 5 دقائق.
+                            </li>
+                            <li>
+                                <strong>Remove Distractions:</strong>
+                                حط الموبايل بعيد واقفل الإشعارات وقت الشغل.
+                            </li>
+                            <li>
+                                <strong>One Task at a Time:</strong>
+                                متحاولش تعمل مهام كتير في نفس اللحظة.
+                            </li>
+                            <li>
+                                <strong>Plan Realistically:</strong>
+                                حدد عدد مهام تقدر تنجزها فعلًا خلال اليوم.
+                            </li>
+                        </ul>
+
+                        <p>
+                            العادات الصغيرة لما تتكرر بتساعدك تبني نظام
+                            تقدر تعتمد عليه، بدل ما تستنى الحماس كل مرة.
+                        </p>
+
+                        <div class="tip">
+                            <strong>Try this:</strong>
+                            ابدأ بجلسة تركيز واحدة النهارده. مش مطلوب منك
+                            تغير كل عاداتك في يوم واحد.
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Topic 5 -->
+                <article class="topic-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=900&q=80"
+                        alt="شخص يستمتع بلحظة هدوء وتفكير"
+                        loading="lazy"
+                    >
+
+                    <div class="topic-content">
+                        <span class="topic-number">TOPIC 05</span>
+                        <h3>Consistency, Not Perfection</h3>
+
+                        <p>
+                            ممكن تبدأ بحماس كبير، وبعد كام يوم تلاقي نفسك
+                            رجعت للتأجيل. ده مش معناه إنك فشلت أو إنك
+                            مش قادر تتغير. المهم إنك تعرف ترجع تاني.
+                        </p>
+
+                        <p>
+                            الاستمرارية معناها إنك تحاول تحافظ على تقدمك
+                            على المدى الطويل، حتى لو بعض الأيام كانت
+                            أقل إنتاجية من غيرها.
+                        </p>
+
+                        <ul>
+                            <li>ابدأ من جديد بدل ما تستنى أول الأسبوع.</li>
+                            <li>راجع سبب التأجيل من غير ما تهاجم نفسك.</li>
+                            <li>احتفل بالخطوات الصغيرة اللي أنجزتها.</li>
+                            <li>خلي عندك وقت للراحة والنوم والحياة الشخصية.</li>
+                        </ul>
+
+                        <p>
+                            كمان متقيسش نجاحك بعدد الساعات اللي قضيتها
+                            قدام الكتاب أو الكمبيوتر فقط؛ بص على اللي
+                            اتعلمته أو أنجزته فعلًا.
+                        </p>
+
+                        <div class="tip">
+                            <strong>Remember:</strong>
+                            يوم مش مثالي مش معناه إن خطتك كلها باظت.
+                            تقدر تكمل من الخطوة التالية.
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Visual Comparison -->
+        <section class="comparison-section">
+            <div class="section-heading">
+                <div class="eyebrow">TWO DIFFERENT APPROACHES</div>
+                <h2>Procrastination vs. Taking Action</h2>
+                <p>
+                    نفس المهمة ممكن نتعامل معاها بطريقتين مختلفتين.
+                    الفرق مش إن شخص ناجح وشخص فاشل؛ الفرق في السلوك
+                    اللي بنختاره، واللي نقدر نتعلم نغيره.
+                </p>
+            </div>
+
+            <div class="comparison-grid">
+
+                <article class="comparison-card procrastination">
+                    <img
+                        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85"
+                        alt="جانب يمثل التشتت وتأجيل المهام"
+                        loading="lazy"
+                    >
+
+                    <div class="comparison-content">
+                        <h3>❌ The Procrastinator</h3>
+
+                        <p>
+                            الشخص اللي بيماطل ممكن يكون عنده أهداف مهمة،
+                            لكنه يفضل يأجل البداية أو يستنى الوقت المثالي.
+                        </p>
+
+                        <ul>
+                            <li>يقول: "هبدأ بعد شوية".</li>
+                            <li>ينتقل بين الموبايل والمهام باستمرار.</li>
+                            <li>يفكر في حجم المهمة من غير ما يقسمها.</li>
+                            <li>يستعجل في النهاية بسبب ضيق الوقت.</li>
+                            <li>يحس بضغط أكبر كل ما التأجيل يستمر.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="comparison-card action">
+                    <img
+                        src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=85"
+                        alt="جانب يمثل التخطيط والعمل على المهام"
+                        loading="lazy"
+                    >
+
+                    <div class="comparison-content">
+                        <h3>✓ The Action Taker</h3>
+
+                        <p>
+                            الشخص اللي بياخد خطوة عملية مش لازم يكون
+                            متحمس طول الوقت، لكنه بيتعلم يبدأ حتى لو
+                            البداية بسيطة.
+                        </p>
+
+                        <ul>
+                            <li>يقول: "هبدأ بخمس دقائق".</li>
+                            <li>يحدد وقتًا للمهمة ويقلل المشتتات.</li>
+                            <li>يقسم الشغل لخطوات واضحة.</li>
+                            <li>يتابع تقدمه ويعدل خطته عند الحاجة.</li>
+                            <li>يرجع يحاول تاني لو يومه ماكانش مثالي.</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="comparison-note">
+                مش المطلوب إنك تكون الشخص المنجز طول الوقت؛ المطلوب إنك
+                تتعلم تختار الخطوة المفيدة التالية كل ما تقدر.
+            </div>
+        </section>
+
+        <!-- Key Takeaways -->
+        <section style="margin-top: 65px;">
+            <div class="section-heading">
+                <div class="eyebrow">YOUR ACTION PLAN</div>
+                <h2>Small Changes, Real Progress</h2>
+                <p>افتكر المبادئ دي كل ما تحس إنك عايز تأجل مهمة مهمة.</p>
+            </div>
+
+            <div class="takeaways">
+                <div class="takeaway">
+                    <div class="symbol">01</div>
+                    <h3>Start Small</h3>
+                    <p>ابدأ بخطوة بسيطة بدل ما تستنى إنك تكون مستعد تمامًا.</p>
+                </div>
+
+                <div class="takeaway">
+                    <div class="symbol">02</div>
+                    <h3>Protect Your Focus</h3>
+                    <p>قلل المشتتات وخصص وقتًا لمهمة واحدة في كل مرة.</p>
+                </div>
+
+                <div class="takeaway">
+                    <div class="symbol">03</div>
+                    <h3>Keep Going</h3>
+                    <p>تابع تقدمك وارجع للخطة بعد أي يوم غير منتج.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Tools -->
+        <section class="tools-section" id="tools">
+            <div class="section-heading">
+                <div class="eyebrow">PUT IT INTO PRACTICE</div>
+                <h2>Your Productivity Toolkit</h2>
+                <p>
+                    استخدم الأدوات دي دلوقتي عشان تحول الكلام لخطوات عملية.
+                </p>
+            </div>
+
+            <div class="tools-grid">
+
+                <!-- Task Tracker -->
+                <section class="tool-card">
+                    <h3>✓ My Task Tracker</h3>
+
+                    <p class="tool-description">
+                        اكتب المهام اللي محتاج تنجزها، وحدد الأولوية،
+                        وبعدها علّم على كل مهمة لما تخلصها.
+                    </p>
+
+                    <form id="taskForm">
+                        <label class="form-label" for="taskInput">
+                            What do you need to do?
+                        </label>
+
+                        <input
+                            type="text"
+                            id="taskInput"
+                            placeholder="مثال: أذاكر أول درس"
+                            maxlength="150"
+                            required
+                        >
+
+                        <label class="form-label" for="taskPriority">
+                            Priority
+                        </label>
+
+                        <select id="taskPriority">
+                            <option value="High">High — مهمة جدًا</option>
+                            <option value="Medium" selected>Medium — متوسطة</option>
+                            <option value="Low">Low — أقل أولوية</option>
+                        </select>
+
+                        <button class="primary-button full-button" type="submit">
+                            + Add Task
+                        </button>
+                    </form>
+
+                    <ul class="task-list" id="taskList">
+                    </ul>
+
+                    <div class="task-summary" id="taskSummary">
+                        Completed: 0 of 0 tasks
+                    </div>
+
+                    <div
+                        class="progress-track"
+                        role="progressbar"
+                        aria-label="Task completion progress"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-valuenow="0"
+                        id="taskProgressTrack"
+                    >
+                        <div class="progress-fill" id="taskProgress"></div>
+                    </div>
+
+                    <button
+                        class="secondary-button full-button"
+                        type="button"
+                        id="clearCompleted"
+                    >
+                        Clear Completed Tasks
+                    </button>
+                </section>
+
+                <!-- Focus Timer -->
+                <section class="tool-card timer-card">
+                    <h3>◷ Focus Timer</h3>
+
+                    <p class="tool-description">
+                        جرب طريقة البومودورو: 25 دقيقة تركيز، وبعدها
+                        5 دقائق راحة. تقدر تختار مدة أقصر لو لسه بتبدأ.
+                    </p>
+
+                    <label class="form-label" for="focusDuration">
+                        Choose your focus time
+                    </label>
+
+                    <select id="focusDuration">
+                        <option value="5">5 minutes — بداية بسيطة</option>
+                        <option value="15">15 minutes — جلسة قصيرة</option>
+                        <option value="25" selected>25 minutes — Pomodoro</option>
+                        <option value="45">45 minutes — جلسة طويلة</option>
+                    </select>
+
+                    <div class="timer-face">
+                        <div class="timer-time" id="timerDisplay">25:00</div>
+                        <div class="timer-label">FOCUS TIME</div>
+                    </div>
+
+                    <div class="timer-controls">
+                        <button class="primary-button" id="startTimer" type="button">
+                            Start
+                        </button>
+
+                        <button class="secondary-button" id="pauseTimer" type="button">
+                            Pause
+                        </button>
+
+                        <button class="secondary-button" id="resetTimer" type="button">
+                            Reset
+                        </button>
+                    </div>
+
+                    <p class="timer-message" id="timerMessage" aria-live="polite">
+                        اختار مهمة واحدة واضغط Start لما تكون مستعد.
+                    </p>
+
+                    <div class="focus-rules">
+                        <h4>Before You Start</h4>
+                        <ul>
+                            <li>حدد مهمة واحدة تركز عليها.</li>
+                            <li>ابعد الموبايل أو اقفل الإشعارات.</li>
+                            <li>جهز الأدوات اللي هتحتاجها.</li>
+                            <li>بعد انتهاء الوقت، خد راحة قصيرة لو محتاج.</li>
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+
+        <!-- Closing -->
+        <section class="closing">
+            <h2>Your Time. Your Choices. Your Future.</h2>
+
+            <p>
+                في نهاية الرحلة دي، افتكر إن تطوير نفسك مش محتاج تغيير
+                كل حاجة مرة واحدة. ابدأ بفهم وقتك، واعرف نفسك وأهدافك،
+                وبعدها خُد خطوات صغيرة تساعدك تتقدم.
+                <strong>مش لازم تستنى اللحظة المثالية؛ ابدأ من المكان
+                اللي أنت فيه، وبالإمكانيات المتاحة ليك دلوقتي.</strong>
+            </p>
+        </section>
+
+        <!-- Page Navigation -->
+        <nav class="page-navigation">
+            <a href="discover-your-direction.html">
+                ← Previous Chapter: Discover Your Direction
+            </a>
+             <a href="growth-mindset.html">
+        Next Chapter: Growth Mindset →
+    </a>
+
+            <a href="index.html">
+                Back to Home ↑
+            </a>
+        </nav>
 
     </main>
 
     <footer>
-        TIME-RICH, MIND-SHIFT: THE SELF-UPGRADE PLAYBOOK
-        <br>
-        افهم وقتك، تغلب على تشتتك، وصنع أثرك.
+        <div class="footer-brand">TIME-RICH, MIND-SHIFT</div>
+        <p>THE SELF-UPGRADE PLAYBOOK</p>
+        <p>Build better habits. Use your time wisely. Keep growing.</p>
     </footer>
 
     <script>
-        function analyzeDistraction() {
-            const distractor = document.getElementById("distractor").value;
-            const commitment = document.getElementById("actionCommitment").value.trim();
-            const resultBox = document.getElementById("resultBox");
-            const planTitle = document.getElementById("planTitle");
-            const planText = document.getElementById("planText");
+        // ==========================================
+        // TASK TRACKER
+        // ==========================================
 
-            if (!distractor) {
-                alert("من فضلك اختر المشتت الرئيسي أولاً.");
+        const taskForm = document.getElementById("taskForm");
+        const taskInput = document.getElementById("taskInput");
+        const taskPriority = document.getElementById("taskPriority");
+        const taskList = document.getElementById("taskList");
+        const taskSummary = document.getElementById("taskSummary");
+        const taskProgress = document.getElementById("taskProgress");
+        const taskProgressTrack = document.getElementById("taskProgressTrack");
+        const clearCompleted = document.getElementById("clearCompleted");
+
+        let tasks = [];
+        let nextTaskId = 1;
+
+        taskForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const taskName = taskInput.value.trim();
+
+            if (taskName === "") {
+                taskInput.focus();
                 return;
             }
 
-            resultBox.style.display = "block";
+            tasks.push({
+                id: nextTaskId++,
+                name: taskName,
+                priority: taskPriority.value,
+                completed: false
+            });
 
-            let strategy = "";
+            taskInput.value = "";
+            taskInput.focus();
 
-            if (distractor === "phone") {
-                planTitle.textContent = "استراتيجية تقليل المشتتات الرقمية:";
-                strategy = "جرب استراتيجية 'بيئة العمل النظيفة'. قم بتفعيل وضع عدم الإزعاج، ضع الهاتف بعيداً عن مجال رؤيتك، واستخدم تقنية البومودورو (25 دقيقة تركيز كامل يليه 5 دقائق راحة).";
-            } else if (distractor === "overwhelmed") {
-                planTitle.textContent = "استراتيجية التفكيك والتقسيم:";
-                strategy = "المهمة الكبيرة تسبب شللاً للتفكير. اختر أصغر جزء ممكن لا يستغرق أكثر من 5 دقائق وابدأ به فوراً دون التفكير في بقية المهمة الآن.";
-            } else if (distractor === "perfectionism") {
-                planTitle.textContent = "استراتيجية 'الإنجاز أفضل من الكمال':";
-                strategy = "تذكر أن النسخة الأولى المكتملة أفضل بكثير من النسخة المثالية التي لم تكتمل أبداً. ابدأ بالتسودة الأولى وأصلحها لاحقاً.";
-            } else if (distractor === "fatigue") {
-                planTitle.textContent = "استراتيجية إدارة الطاقة:";
-                strategy = "التسويف هنا ناتج عن نفاد الطاقة وليس الكسل. خذ استراحة قصيرة، اشرب ماء، أو اخرج للمشي دقائق، ثم استأنف العمل عندما يستعيد عقلك نشاطه.";
+            renderTasks();
+        });
+
+        function renderTasks() {
+            taskList.innerHTML = "";
+
+            tasks.forEach(function(task) {
+                const li = document.createElement("li");
+                li.className = "task-item";
+
+                if (task.completed) {
+                    li.classList.add("done");
+                }
+
+                const checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkbox.checked = task.completed;
+                checkbox.setAttribute("aria-label", "Mark task completed");
+
+                checkbox.addEventListener("change", function() {
+                    task.completed = checkbox.checked;
+                    renderTasks();
+                });
+
+                const textContainer = document.createElement("div");
+                textContainer.className = "task-text";
+
+                const taskTitle = document.createElement("span");
+                taskTitle.textContent = task.name;
+
+                const priorityLabel = document.createElement("small");
+                priorityLabel.textContent = "Priority: " + task.priority;
+
+                textContainer.appendChild(taskTitle);
+                textContainer.appendChild(priorityLabel);
+
+                const deleteButton = document.createElement("button");
+                deleteButton.type = "button";
+                deleteButton.className = "delete-button";
+                deleteButton.textContent = "Delete";
+                deleteButton.setAttribute("aria-label", "Delete task");
+
+                deleteButton.addEventListener("click", function() {
+                    tasks = tasks.filter(function(item) {
+                        return item.id !== task.id;
+                    });
+
+                    renderTasks();
+                });
+
+                li.appendChild(checkbox);
+                li.appendChild(textContainer);
+                li.appendChild(deleteButton);
+
+                taskList.appendChild(li);
+            });
+
+            const completedCount = tasks.filter(function(task) {
+                return task.completed;
+            }).length;
+
+            const totalCount = tasks.length;
+
+            const percentage = totalCount === 0
+                ? 0
+                : Math.round((completedCount / totalCount) * 100);
+
+            taskSummary.textContent =
+                "Completed: " + completedCount + " of " + totalCount +
+                " tasks (" + percentage + "%)";
+
+            taskProgress.style.width = percentage + "%";
+
+            taskProgressTrack.setAttribute("aria-valuenow", percentage);
+        }
+
+        clearCompleted.addEventListener("click", function() {
+            tasks = tasks.filter(function(task) {
+                return !task.completed;
+            });
+
+            renderTasks();
+        });
+
+
+        // ==========================================
+        // FOCUS TIMER
+        // ==========================================
+
+        const focusDuration = document.getElementById("focusDuration");
+        const timerDisplay = document.getElementById("timerDisplay");
+        const timerMessage = document.getElementById("timerMessage");
+        const startTimer = document.getElementById("startTimer");
+        const pauseTimer = document.getElementById("pauseTimer");
+        const resetTimer = document.getElementById("resetTimer");
+
+        let remainingSeconds = Number(focusDuration.value) * 60;
+        let timerInterval = null;
+
+        function displayTime() {
+            const minutes = Math.floor(remainingSeconds / 60);
+            const seconds = remainingSeconds % 60;
+
+            timerDisplay.textContent =
+                String(minutes).padStart(2, "0") + ":" +
+                String(seconds).padStart(2, "0");
+        }
+
+        function stopTimer() {
+            if (timerInterval !== null) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+        }
+
+        function startFocusTimer() {
+            if (timerInterval !== null) {
+                return;
             }
 
-            if (commitment) {
-strategy += "\n\nالتزامك الشخصي: \"" + commitment + "\" هو بداية ممتازة لترجمة هذه الخطط إلى واقع!";            }
+            if (remainingSeconds <= 0) {
+                timerMessage.textContent =
+                    "انتهت الجلسة! اعمل Reset لو عايز تبدأ جلسة جديدة.";
+                return;
+            }
 
-            planText.textContent = strategy;
+            timerMessage.textContent = "ركز في المهمة الحالية، وسيب المشتتات لوقت الراحة.";
 
-            resultBox.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest"
-            });
+            timerInterval = setInterval(function() {
+                remainingSeconds--;
+                displayTime();
+
+                if (remainingSeconds <= 0) {
+                    stopTimer();
+
+                    timerMessage.textContent =
+                        "أحسنت! انتهت جلسة التركيز. خد راحة قصيرة وكافئ نفسك.";
+
+                    timerDisplay.textContent = "00:00";
+
+                    alert("أحسنت! انتهت جلسة التركيز. خد راحة قصيرة.");
+                }
+            }, 1000);
         }
+
+        function pauseFocusTimer() {
+            stopTimer();
+
+            if (remainingSeconds > 0) {
+                timerMessage.textContent =
+                    "المؤقت متوقف مؤقتًا. اضغط Start عشان تكمل.";
+            }
+        }
+
+        function resetFocusTimer() {
+            stopTimer();
+            remainingSeconds = Number(focusDuration.value) * 60;
+            displayTime();
+
+            timerMessage.textContent =
+                "تم إعادة ضبط المؤقت. اختار مهمة واضغط Start.";
+        }
+
+        startTimer.addEventListener("click", startFocusTimer);
+
+        pauseTimer.addEventListener("click", pauseFocusTimer);
+
+        resetTimer.addEventListener("click", resetFocusTimer);
+
+        focusDuration.addEventListener("change", function() {
+            resetFocusTimer();
+        });
+
+        displayTime();
+        renderTasks();
     </script>
+
 </body>
 </html>

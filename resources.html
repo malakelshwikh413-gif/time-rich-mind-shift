@@ -1,0 +1,874 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Resources | TIME-RICH, MIND-SHIFT</title>
+
+<style>
+:root {
+  --dark-pink: #D6336C;
+  --pink: #FF4081;
+  --light-pink: #FFB6C1;
+  --white-pink: #FFF5F8;
+  --purple: #462C7D;
+  --black: #222222;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Tahoma, sans-serif;
+  background: var(--white-pink);
+  color: var(--black);
+  line-height: 1.8;
+}
+
+header {
+  background: linear-gradient(135deg, var(--dark-pink), var(--purple));
+  color: white;
+  padding: 55px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.4;
+}
+
+header p {
+  max-width: 750px;
+  margin: 15px auto 0;
+}
+
+.container {
+  width: min(1150px, 92%);
+  margin: auto;
+}
+
+.intro {
+  text-align: center;
+  padding: 30px 0 15px;
+}
+
+.intro h2 {
+  color: var(--dark-pink);
+}
+
+.section-title {
+  color: var(--purple);
+  font-size: 27px;
+  margin-bottom: 5px;
+}
+
+.section-description {
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 22px;
+}
+
+.search-area {
+  margin: 20px 0 30px;
+  text-align: center;
+}
+
+.search-area input {
+  width: min(100%, 600px);
+  padding: 14px 18px;
+  border: 2px solid var(--light-pink);
+  border-radius: 30px;
+  font-size: 16px;
+  outline: none;
+  background: white;
+}
+
+.search-area input:focus {
+  border-color: var(--dark-pink);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.filter-btn {
+  background: white;
+  border: 1px solid var(--dark-pink);
+  color: var(--dark-pink);
+  padding: 9px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--dark-pink);
+  color: white;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-bottom: 45px;
+}
+
+.resource-card {
+  background: white;
+  border: 1px solid #f6c7d7;
+  border-radius: 17px;
+  padding: 22px;
+  box-shadow: 0 5px 18px #462c7d12;
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 9px 22px #462c7d20;
+}
+
+.resource-icon {
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.category {
+  display: inline-block;
+  align-self: flex-start;
+  background: #ffe2ed;
+  color: var(--dark-pink);
+  border-radius: 20px;
+  padding: 3px 11px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.resource-card h3 {
+  color: var(--purple);
+  font-size: 20px;
+  margin: 10px 0 5px;
+  line-height: 1.5;
+}
+
+.english-title {
+  direction: ltr;
+  text-align: right;
+  font-weight: bold;
+  color: var(--dark-pink);
+  margin: 0 0 10px;
+}
+
+.resource-card p {
+  margin: 5px 0 15px;
+  color: #444;
+}
+
+.resource-card a {
+  color: var(--dark-pink);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.resource-card a:hover {
+  color: var(--purple);
+  text-decoration: underline;
+}
+
+.resource-link {
+  margin-top: auto;
+  display: inline-block;
+  padding-top: 10px;
+}
+
+.featured {
+  background: linear-gradient(135deg, #fff, #ffeaf2);
+  border: 2px solid var(--light-pink);
+}
+
+.tip-box {
+  background: #fff;
+  border-right: 5px solid var(--pink);
+  border-radius: 12px;
+  padding: 22px;
+  margin: 25px 0 40px;
+}
+
+.tip-box h3 {
+  color: var(--dark-pink);
+  margin-top: 0;
+}
+
+.reading-plan {
+  background: #f0eafb;
+  border-radius: 17px;
+  padding: 25px;
+  margin-bottom: 40px;
+}
+
+.reading-plan h2 {
+  color: var(--purple);
+  margin-top: 0;
+}
+
+.reading-plan li {
+  margin-bottom: 10px;
+}
+
+.empty-message {
+  display: none;
+  text-align: center;
+  color: var(--purple);
+  padding: 20px;
+}
+
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 35px 0;
+}
+
+.navigation a {
+  background: var(--dark-pink);
+  color: white;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.navigation a:hover {
+  background: var(--purple);
+}
+
+footer {
+  text-align: center;
+  background: var(--purple);
+  color: white;
+  padding: 22px 15px;
+}
+
+footer p {
+  margin: 3px;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 27px;
+  }
+
+  .section-title {
+    font-size: 23px;
+  }
+
+  .resource-card {
+    padding: 18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>YOUR SELF-UPGRADE LIBRARY</h1>
+  <p>
+    Books, Talks, Audio & Tools
+  </p>
+  <p>
+    مكتبتك لتطوير الذات، وتنظيم الوقت، وبناء العادات،
+    وتحقيق الأهداف، والتعلّم المستمر.
+  </p>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <h2>Learn Something. Apply Something. Grow Every Day.</h2>
+    <p>
+      المصادر وحدها مش كفاية؛ اختاري مصدرًا مناسبًا،
+      اتعلمي منه فكرة، وطبّقيها في حياتك.
+    </p>
+  </section>
+
+  <section class="search-area">
+    <input
+      type="search"
+      id="resourceSearch"
+      placeholder="Search books, talks, audio, or topics..."
+      aria-label="Search resources">
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All Resources</button>
+      <button class="filter-btn" data-filter="book">Books</button>
+      <button class="filter-btn" data-filter="audio">Audio & Talks</button>
+      <button class="filter-btn" data-filter="learning">Free Learning</button>
+      <button class="filter-btn" data-filter="tools">Tools</button>
+    </div>
+  </section>
+
+  <!-- BOOKS -->
+  <section id="books">
+    <h2 class="section-title">01. Books for Personal Growth</h2>
+    <p class="section-description">
+      كتب تساعدك تفهمي نفسك، وتديري وقتك، وتطوّري عاداتك وأهدافك.
+    </p>
+
+    <div class="resources-grid">
+
+      <article class="resource-card featured"
+        data-category="book"
+        data-search="إبراهيم الفقي قوة التفكير التنمية البشرية التفكير الإيجابي">
+
+        <div class="resource-icon">📘</div>
+        <span class="category">Personal Development</span>
+        <h3>قوة التفكير</h3>
+        <p class="english-title">The Power of Thinking</p>
+        <p>
+          كتاب مرتبط بأعمال إبراهيم الفقي في التنمية البشرية،
+          يساعدك على التفكير في طريقة تعاملك مع الأفكار والمواقف.
+        </p>
+        <a class="resource-link"
+          href="https://www.ibrahimelfiky.com/about-8-2"
+          target="_blank" rel="noopener">
+          Explore Ibrahim El-Fiky's Website ↗
+        </a>
+      </article>
+
+      <article class="resource-card"
+        data-category="book"
+        data-search="إبراهيم الفقي إدارة الوقت النجاح الأهداف">
+
+        <div class="resource-icon">⏳</div>
+        <span class="category">Time Management</span>
+        <h3>إدارة الوقت والأهداف</h3>
+        <p class="english-title">Time Management & Goal Setting</p>
+        <p>
+          ابدئي بالمواد الصوتية الخاصة بإبراهيم الفقي عن تحديد
+          الأهداف وإدارة الوقت، ثم طبّقي الأفكار على يومك.
+        </p>
+        <a class="resource-link"
+          href="https://www.ibrahimelfiky.com/general-7-2"
+          target="_blank" rel="noopener">
+          Explore Audio Episodes ↗
+        </a>
+      </article>
+
+      <article class="resource-card"
+        data-category="book"
+        data-search="Atomic Habits James Clear العادات الصغيرة الاستمرارية">
+
+        <div class="resource-icon">📗</div>
+        <span class="category">Building Habits</span>
+        <h3>Atomic Habits</h3>
+        <p class="english-title">James Clear</p>
+        <p>
+          يشرح إزاي التغييرات الصغيرة والعادات اليومية
+          ممكن تساعدك تبني نظامًا أفضل لحياتك.
+        </p>
+        <a class="resource-link"
+          href="https://jamesclear.com/atomic-habits"
+          target="_blank" rel="noopener">
+          Official Book Website ↗
+        </a>
+      </article>
+
+      <article class="resource-card"
+        data-category="book"
+        data-search="7 Habits Highly Effective People Stephen Covey العادات الأهداف الأولويات">
+
+        <div class="resource-icon">📙</div>
+        <span class="category">Productivity</span>
+        <h3>The 7 Habits of Highly Effective People</h3>
+        <p class="english-title">Stephen R. Covey</p>
+        <p>
+          يساعدك على تحديد أولوياتك، والتصرف بوعي،
+          وتنظيم حياتك حول أهداف وقيم واضحة.
+        </p>
+        <a class="resource-link"
+          href="https://www.franklincovey.com/the-7-habits/"
+          target="_blank" rel="noopener">
+          Explore the 7 Habits ↗
+        </a>
+      </article>
+
+      <article class="resource-card"
+        data-category="book"
+        data-search="Mindset Carol Dweck growth mindset عقلية النمو التعلم من الأخطاء">
+
+        <div class="resource-icon">🧠</div>
+        <span class="category">Growth Mindset</span>
+        <h3>Mindset</h3>
+        <p class="english-title">Carol S. Dweck</p>
+        <p>
+          يعرّفك على الفرق بين الاعتقاد بأن قدراتك ثابتة
+          والإيمان بأنك تستطيعين تطويرها بالتعلم والممارسة.
+        </p>
+        <a class="resource-link"
+          href="https://www.google.com/search?q=Mindset+Carol+Dweck+official+book"
+          target="_blank" rel="noopener">
+          Find the Book ↗
+        </a>
+      </article>
+
+      <article class="resource-card"
+        data-category="book"
+        data-search="Deep Work Cal Newport التركيز المذاكرة المشتتات">
+
+        <div class="resource-icon">🎯</div>
+        <span class="category">Focus</span>
+        <h3>Deep Work</h3>
+        <p class="english-title">Cal Newport</p>
+        <p>
+          عن أهمية التركيز العميق وتقليل المشتتات
+          لإنجاز الأعمال التي تحتاج إلى تفكير ومجهود.
+        </p>
+        <a class="resource-link"
+          href="https://calnewport.com/books/"
+          target="_blank" rel="noopener">
+          Author's Book List ↗
+        </a>
+      </article>
+
+      <article class="resource-card"
+        data-category="book"
+        data-search="The 5 Second Rule Mel Robbins التسويف البدء الفعل">
+
+        <div class="resource-icon">🚀</div>
+        <span class="category">Taking Action</span>
+        <h3>The 5 Second Rule</h3>
+        <p class="english-title">Mel Robbins</p>
+        <p>
+          يقدم أسلوبًا بسيطًا لمقاومة التردد
+          والبدء في تنفيذ الخطوة التي تؤجلينها.
+        </p>
+        <a class="resource-link"
+          href="https://www.melrobbins.com/"
+          target="_blank" rel="noopener">
+          Mel Robbins Official Website ↗
+        </a>
+      </article>
+
+      <article class="resource-card"
+        data-category="book"
+        data-search="رحلتي مع رفيق العمر آمال الفقي إبراهيم الفقي">
+
+        <div class="resource-icon">📚</div>
+        <span class="category">Biography</span>
+        <h3>رحلتي مع رفيق العمر</h3>
+        <p class="english-title">My Journey with My Life Partner</p>
+        <p>
+          كتاب للدكتورة آمال الفقي عن حياتها مع إبراهيم الفقي
+          ورحلتهما معًا، وفقًا للموقع الرسمي.
+        </p>
+        <a class="resource-link"
+          href="https://www.ibrahimelfiky.com/about-8-2"
+          target="_blank" rel="noopener">
+          Read the Official Information ↗
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- AUDIO AND TALKS -->
+  <section id="audio">
+    <h2 class="section-title">02. Audio, Podcasts & TED Talks</h2>
+    <p class="section-description">
+      اسمعي أفكارًا جديدة من خبراء وقادة أعمال،
+      واستفيدي منها أثناء وقتك المخصص للتعلم.
+    </p>
+
+    <div class="resources-grid">
+
+      <article class="resource-card featured"
+        data-category="audio"
+        data-search="إبراهيم الفقي حلقات صوتية إدارة الذات الأهداف الحياة المتوازنة">
+
+        <div class="resource-icon">🎧</div>
+        <span class="category">Arabic Audio</span>
+        <h3>إبراهيم الفقي — حلقات صوتية</h3>
+        <p class="english-title">Dr. Ibrahim El-Fiky Audio Episodes</p>
+        <p>
+          مصدر صوتي عن موضوعات منها إدارة الذات،
+          وتحديد الأهداف، وأبعاد الحياة المتوازنة.
+        </p>
+        <a class="resource-link"
+          href="https://www.ibrahimelfiky.com/general-7-2"
+          target="_blank" rel="noopener">
+          Listen & Explore ↗
+        </a>
+      </article>
+
+      <article class="resource-card"
+        data-category="audio"
+        data-search="Kat Cole TED Talk hot shot rule leadership كات كول القيادة">
+
+        <div class="resource-icon">🎤</div>
+        <span class="category">Leadership Talk</span>
+        <h3>كات كول: قاعدة Hot Shot Rule</h3>
+        <p class="english-title">Kat Cole — TED Talk</p>
+        <p>
+          محاضرة عن اتخاذ خطوات جريئة في العمل،
+          وتطوير الثقة بالنفس من خلال الفعل.
+        </p>
+        <a class="resource-link"
+          href="https://www.ted.com/speakers/kat_cole"
+          target="_blank" rel="noopener">
+          Watch on TED ↗
+        </a>
+      </article>
+
+      <article class="resource-card"
+        data-category="audio"
+        data-search="Carol Dweck growth mindset TED power believing improve عقلية النمو">
+
+        <div class="resource-icon">🌱</div>
+        <span class="category">Growth Mindset</span>
+        <h3>The Power of Believing That You Can Improve</h3>
+        <p class="english-title">Carol Dweck — TED</p>
+        <p>
+          محاضرة عن عقلية النمو، وإزاي نظرتك للتعلم
+          والأخطاء ممكن تساعدك على التطور.
+        </p>
+        <a class="resource-link"
+          href="https://www.ted.com/topics/growth%2Bmindset"
+          target="_blank" rel="noopener">
+          Explore TED Talks ↗
+        </a>
+      </article>
+
+      <article class="resource-card"
+        data-category="audio"
+        data-search="Angela Duckworth Grit passion perseverance TED الاستمرار المثابرة">
+
+        <div class="resource-icon">🔥</div>
+        <span class="category">Consistency</span>
+        <h3>Grit: The Power of Passion and Perseverance</h3>
+        <p class="english-title">Angela Lee Duckworth — TED</p>
+        <p>
+          محاضرة عن دور المثابرة والاستمرار
+          في الوصول إلى الأهداف طويلة المدى.
+        </p>
+        <a class="resource-link"
+          href="https://www.ted.com/topics/growth%2Bmindset"
+          target="_blank" rel="noopener">
+          Explore TED Talks ↗
+        </a>
+      </article>
+
+      <article class="resource-card"
+        data-category="audio"
+        data-search="TED productivity time management focus productivity talks">
+
+        <div class="resource-icon">⏰</div>
+        <span class="category">Productivity</span>
+        <h3>TED Talks About Productivity</h3>
+        <p class="english-title">Time, Focus & Better Work</p>
+        <p>
+          مجموعة محاضرات عن الإنتاجية، وتنظيم العمل،
+          وتحسين طريقة استخدام الوقت.
+        </p>
+        <a class="resource-link"
+          href="https://www.ted.com/topics/productivity"
+          target="_blank" rel="noopener">
+          Explore Productivity Talks ↗
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- FREE LEARNING -->
+  <section id="learning">
+    <h2 class="section-title">03. Free Learning Resources</h2>
+    <p class="section-description">
+      مصادر تساعدك على التعلم المستمر، وفهم العادات،
+      وتحويل المعرفة إلى ممارسة.
+    </p>
+
+    <div class="resources-grid">
+
+      <article class="resource-card"
+        data-category="learning"
+        data-search="James Clear articles habits decision making 3-2-1 newsletter">
+
+        <div class="resource-icon">✍️</div>
+        <span class="category">Articles & Newsletter</span>
+        <h3>James Clear — Articles</h3>
+        <p>
+          مقالات عن العادات، واتخاذ القرارات،
+          والتحسين المستمر بخطوات صغيرة.
+        </p>
+        <a class="resource-link"
+          href="https://jamesclear.com/articles"
+          target="_blank" rel="noopener">
+          Read Articles ↗
+        </a>
+      </article>
+
+      <article class="resource-card"
+        data-category="learning"
+        data-search="TED learning better habits education ideas">
+
+        <div class="resource-icon">💡</div>
+        <span class="category">Ideas & Learning</span>
+        <h3>TED — Ideas Worth Spreading</h3>
+        <p>
+          استكشفي أفكارًا جديدة في التعلم، والقيادة،
+          وعلم النفس، والتطوير الشخصي.
+        </p>
+        <a class="resource-link"
+          href="https://www.ted.com/talks"
+          target="_blank" rel="noopener">
+          Explore Talks ↗
+        </a>
+      </article>
+
+      <article class="resource-card"
+        data-category="learning"
+        data-search="Coursera learning skills time management personal development">
+
+        <div class="resource-icon">🎓</div>
+        <span class="category">Online Courses</span>
+        <h3>Coursera</h3>
+        <p>
+          دورات في التعلم، والمهارات المهنية،
+          والتفكير، ومجالات متنوعة. بعض الدورات مدفوعة.
+        </p>
+        <a class="resource-link"
+          href="https://www.coursera.org/"
+          target="_blank" rel="noopener">
+          Explore Courses ↗
+        </a>
+      </article>
+
+      <article class="resource-card"
+        data-category="learning"
+        data-search="Learning How to Learn course Coursera Barbara Oakley learning techniques">
+
+        <div class="resource-icon">🧠</div>
+        <span class="category">Learning Skills</span>
+        <h3>Learning How to Learn</h3>
+        <p>
+          دورة عن استراتيجيات التعلم، وفهم المعلومات،
+          والتعامل مع المذاكرة والتحديات الذهنية.
+        </p>
+        <a class="resource-link"
+          href="https://www.coursera.org/learn/learning-how-to-learn"
+          target="_blank" rel="noopener">
+          Explore the Course ↗
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section id="tools">
+    <h2 class="section-title">04. Tools & Practical Worksheets</h2>
+    <p class="section-description">
+      أدوات بسيطة تساعدك تطبّقي الأفكار بدل ما تكتفي بالقراءة.
+    </p>
+
+    <div class="resources-grid">
+
+      <article class="resource-card"
+        data-category="tools"
+        data-search="habit tracker daily habits consistency عادات يومية">
+
+        <div class="resource-icon">✅</div>
+        <span class="category">Habit Tracking</span>
+        <h3>Habit Tracker</h3>
+        <p>
+          تابعي عادة واحدة يوميًا، مثل القراءة أو المذاكرة،
+          وسجلي مدى التزامك بها.
+        </p>
+        <a class="resource-link"
+          href="https://jamesclear.com/habit-tracker"
+          target="_blank" rel="noopener">
+          Explore Habit Tracking ↗
+        </a>
+      </article>
+
+      <article class="resource-card"
+        data-category="tools"
+        data-search="SMART goals specific measurable achievable relevant time bound goal setting">
+
+        <div class="resource-icon">🎯</div>
+        <span class="category">Goal Planning</span>
+        <h3>SMART Goals</h3>
+        <p>
+          حوّلي هدفك إلى هدف محدد، قابل للقياس،
+          واقعي، مرتبط بأولوياتك، وله موعد نهائي.
+        </p>
+        <a class="resource-link"
+          href="https://www.mindtools.com/a4wo118/smart-goals/"
+          target="_blank" rel="noopener">
+          Learn Goal Setting ↗
+        </a>
+      </article>
+
+      <article class="resource-card"
+        data-category="tools"
+        data-search="Pomodoro timer focus study breaks time management">
+
+        <div class="resource-icon">🍅</div>
+        <span class="category">Focus Tool</span>
+        <h3>Pomodoro Timer</h3>
+        <p>
+          جرّبي التركيز لمدة 25 دقيقة، ثم خدي استراحة قصيرة.
+          عدّلي المدة بما يناسب المهمة.
+        </p>
+        <a class="resource-link"
+          href="https://pomofocus.io/"
+          target="_blank" rel="noopener">
+          Try the Timer ↗
+        </a>
+      </article>
+
+      <article class="resource-card"
+        data-category="tools"
+        data-search="time audit daily schedule time tracking productivity">
+
+        <div class="resource-icon">📅</div>
+        <span class="category">Time Audit</span>
+        <h3>Review Your Day</h3>
+        <p>
+          اكتبي الوقت الذي تقضينه في الدراسة، والنوم،
+          والموبايل، والراحة، وحددي ما يحتاج إلى تعديل.
+        </p>
+        <a class="resource-link"
+          href="where-your-time-go.html">
+          Use the Project's Time Audit ↗
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="tip-box">
+    <h3>💗 How to Use These Resources</h3>
+    <ol>
+      <li>اختاري كتابًا أو محاضرة واحدة تناسب هدفك الحالي.</li>
+      <li>اكتبي ثلاث أفكار مفيدة تعلمتيها.</li>
+      <li>اختاري فكرة واحدة وطبقيها خلال الأسبوع.</li>
+      <li>راجعي النتيجة وعدّلي طريقتك لو احتجتِ.</li>
+    </ol>
+  </section>
+
+  <section class="reading-plan">
+    <h2>YOUR 4-WEEK SELF-UPGRADE PLAN</h2>
+    <p>خطة بسيطة للاستفادة من المصادر الموجودة في المكتبة.</p>
+
+    <ol>
+      <li>
+        <strong>Week 1 — Self-Awareness:</strong>
+        ابدئي بمراجعة يومك وتحديد أكثر شيء يحتاج إلى تحسين.
+      </li>
+      <li>
+        <strong>Week 2 — Time & Focus:</strong>
+        شاهدي محاضرة عن الإنتاجية وجرّبي مؤقت التركيز.
+      </li>
+      <li>
+        <strong>Week 3 — Habits:</strong>
+        اختاري عادة صغيرة وتابعيها كل يوم.
+      </li>
+      <li>
+        <strong>Week 4 — Goals & Growth:</strong>
+        اكتبي هدفًا واضحًا وراجعي تقدمك وما تعلمتيه.
+      </li>
+    </ol>
+  </section>
+
+  <nav class="navigation">
+    <a href="index.html">Home</a>
+    <a href="where-your-time-go.html">Time Audit</a>
+    <a href="understand-yourself.html">Understand Yourself</a>
+    <a href="discover-your-direction.html">Discover Your Direction</a>
+    <a href="beat-procrastination.html">Beat Procrastination</a>
+    <a href="growth-mindset.html">Growth Mindset</a>
+    <a href="success-stories.html">Success Stories</a>
+  </nav>
+
+</main>
+
+<footer>
+  <p><strong>TIME-RICH, MIND-SHIFT</strong></p>
+  <p>THE SELF-UPGRADE PLAYBOOK</p>
+  <p>Learn • Apply • Grow</p>
+</footer>
+
+<script>
+const searchInput = document.getElementById("resourceSearch");
+const filterButtons = document.querySelectorAll(".filter-btn");
+const cards = document.querySelectorAll(".resource-card");
+
+let activeFilter = "all";
+
+function filterResources() {
+  const query = searchInput.value.trim().toLowerCase();
+  let visibleCount = 0;
+
+  cards.forEach(function(card) {
+    const category = card.dataset.category || "";
+    const searchableText =
+      (card.innerText + " " + (card.dataset.search || "")).toLowerCase();
+
+    const matchesFilter =
+      activeFilter === "all" || category === activeFilter;
+
+    const matchesSearch = searchableText.includes(query);
+    const show = matchesFilter && matchesSearch;
+
+    card.style.display = show ? "flex" : "none";
+
+    if (show) {
+      visibleCount++;
+    }
+  });
+
+  document.getElementById("noResults").style.display =
+    visibleCount === 0 ? "block" : "none";
+}
+
+filterButtons.forEach(function(button) {
+  button.addEventListener("click", function() {
+    activeFilter = button.dataset.filter;
+
+    filterButtons.forEach(function(item) {
+      item.classList.remove("active");
+    });
+
+    button.classList.add("active");
+    filterResources();
+  });
+});
+
+searchInput.addEventListener("input", filterResources);
+</script>
+
+<div id="noResults" class="empty-message">
+  No resources found. Try another search.
+</div>
+
+</body>
+</html>

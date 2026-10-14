@@ -1,280 +1,596 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TIME-RICH, MIND-SHIFT</title>
+
+    <title>TIME-RICH, MIND-SHIFT | The Self-Upgrade Playbook</title>
+
     <style>
-        /* GENERAL SETTINGS */
+        :root {
+            --pink-dark: #D6336C;
+            --pink-bright: #FF4081;
+            --pink-light: #FFB6C1;
+            --pink-white: #FFF5F8;
+            --black: #000000;
+            --purple: #462C7D;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            background-color: #f5f7fb;
-            color: #17233f;
-            line-height: 1.8;
-        }
+
         html {
             scroll-behavior: smooth;
         }
-        /* NAVIGATION BAR */
+
+        body {
+            font-family: Arial, Tahoma, sans-serif;
+            background: var(--black);
+            color: var(--pink-white);
+            line-height: 1.9;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
         nav {
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
-            padding: 22px 8%;
-            background-color: #101c35;
-            color: white;
+            gap: 20px;
+            padding: 20px 7%;
+            border-bottom: 1px solid var(--purple);
         }
+
         .logo {
-            font-size: 18px;
+            color: var(--pink-light);
+            font-size: 21px;
             font-weight: bold;
-            letter-spacing: 1px;
+            direction: ltr;
+            white-space: nowrap;
         }
-        .logo span {
-            color: #58a6ff;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        nav a:hover {
-            color: #58a6ff;
-        }
-        /* HERO SECTION */
-        .hero {
-            min-height: 620px;
-            padding: 100px 8%;
+
+        .nav-links {
             display: flex;
-            align-items: center;
-            background:
-                radial-gradient(
-                    circle at 85% 25%,
-                    rgba(49, 115, 220, 0.22),
-                    transparent 35%
-                ),
-                linear-gradient(135deg, #101c35, #172b50);
-            color: white;
+            gap: 18px;
+            flex-wrap: wrap;
         }
-        .hero-content {
-            max-width: 850px;
-        }
-        .tag {
-            display: inline-block;
-            color: #83bdff;
-            border: 1px solid #355b91;
-            padding: 6px 16px;
-            border-radius: 30px;
-            font-size: 12px;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
-        }
-        .hero h1 {
-            font-size: clamp(38px, 6vw, 68px);
-            line-height: 1.2;
-            margin-bottom: 25px;
-            letter-spacing: -1px;
-        }
-        .hero h1 span {
-            color: #58a6ff;
-        }
-        .hero p {
-            max-width: 650px;
-            color: #d3dced;
-            font-size: 17px;
-            margin-bottom: 35px;
-        }
-        .button {
-            display: inline-block;
-            background-color: #3984f5;
-            color: white;
-            padding: 13px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
+
+        .nav-links a {
+            color: var(--pink-white);
+            font-size: 13px;
             transition: 0.3s;
         }
+
+        .nav-links a:hover {
+            color: var(--pink-bright);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 45px;
+            padding: 75px 8%;
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(70, 44, 125, 0.4),
+                    transparent 45%
+                );
+        }
+
+        .eyebrow {
+            color: var(--pink-bright);
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            direction: ltr;
+            display: inline-block;
+        }
+
+        h1 {
+            font-size: clamp(35px, 5vw, 62px);
+            line-height: 1.25;
+            margin: 20px 0;
+            direction: ltr;
+        }
+
+        h1 span {
+            color: var(--pink-bright);
+        }
+
+        .hero-text {
+            color: var(--pink-light);
+            font-size: 16px;
+            margin-bottom: 25px;
+            max-width: 550px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 2px solid var(--purple);
+            box-shadow: 0 0 35px rgba(70, 44, 125, 0.3);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 23px;
+            background: var(--pink-dark);
+            color: white;
+            border: 2px solid var(--pink-dark);
+            border-radius: 8px;
+            font-weight: bold;
+            direction: ltr;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
         .button:hover {
-            background-color: #66a4ff;
+            background: var(--pink-bright);
+            border-color: var(--pink-bright);
+            color: var(--black);
             transform: translateY(-3px);
         }
-        /* INTRODUCTION SECTION */
-        .introduction {
-            padding: 90px 8%;
+
+        .intro {
+            padding: 65px 10%;
+            text-align: center;
+            background: #10080C;
+            border-top: 1px solid #321321;
+            border-bottom: 1px solid #321321;
         }
+
         .section-label {
-            color: #3176d8;
-            font-size: 16px;
+            color: var(--pink-bright);
+            font-size: 12px;
             font-weight: bold;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 25px;
+            letter-spacing: 2px;
+            direction: ltr;
+            display: inline-block;
+        }
+
+        h2 {
+            color: var(--pink-light);
+            font-size: clamp(26px, 4vw, 36px);
+            margin: 12px 0 22px;
+        }
+
+        .intro p {
+            max-width: 900px;
+            margin: 0 auto 15px;
+            color: var(--pink-white);
+            text-align: right;
+        }
+
+        .quote {
+            color: var(--pink-light);
+            border-right: 4px solid var(--pink-bright);
+            padding: 12px 18px;
+            margin: 25px auto 0;
+            max-width: 850px;
+            text-align: right;
+            background: rgba(70, 44, 125, 0.2);
+            border-radius: 8px;
+        }
+
+        .features {
+            padding: 70px 8%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-heading p {
+            color: var(--pink-light);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            overflow: hidden;
+            background: var(--pink-white);
+            color: var(--black);
+            border-radius: 14px;
+            transition: 0.3s;
+            border: 1px solid #3E244D;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(214, 51, 108, 0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 23px;
+        }
+
+        .chapter {
+            color: var(--pink-dark);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            direction: ltr;
+            display: inline-block;
+        }
+
+        .card h3 {
+            color: var(--purple);
+            font-size: 22px;
+            margin: 8px 0;
+            direction: ltr;
+        }
+
+        .card p {
+            color: #333333;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .card-link {
+            color: var(--pink-dark);
+            font-weight: bold;
+            direction: ltr;
+            display: inline-block;
+        }
+
+        .card-link:hover {
+            color: var(--purple);
+        }
+
+        .benefits {
+            margin: 0 8% 70px;
+            padding: 40px;
+            border-radius: 16px;
+            background: var(--purple);
+        }
+
+        .benefits h2 {
+            color: var(--pink-white);
             text-align: center;
         }
-        .intro-card {
-            max-width: 950px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 40px;
-            border-radius: 18px;
-            box-shadow: 0 12px 40px rgba(16, 28, 53, 0.06);
-            border: 1px solid #e9edf5;
-        }
-        .intro-card p {
-            color: #505d73;
-            font-size: 16px;
-            margin-bottom: 20px;
-            text-align: right;
-        }
-        .intro-card h3 {
-            color: #172b50;
-            font-size: 23px;
-            margin: 30px 0 15px;
-            text-align: right;
-        }
-        .highlight {
-            background-color: #edf5ff;
-            border-left: 4px solid #3984f5;
-            padding: 20px;
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
             margin-top: 25px;
-            color: #172b50;
-            font-weight: 600;
-            text-align: right;
         }
-        /* FOOTER */
+
+        .benefit {
+            padding: 18px;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+        }
+
+        .benefit h3 {
+            color: var(--pink-light);
+            margin-bottom: 8px;
+        }
+
+        .benefit p {
+            color: var(--pink-white);
+            font-size: 14px;
+        }
+
+        .closing {
+            text-align: center;
+            padding: 65px 20px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #16070D,
+                    #20113A
+                );
+        }
+
+        .closing p {
+            color: var(--pink-light);
+            margin: 0 auto 25px;
+        }
+
         footer {
-            background-color: #101c35;
-            color: #c7d1e2;
             text-align: center;
             padding: 25px 15px;
-            font-size: 13px;
+            border-top: 1px solid var(--purple);
+            color: var(--pink-light);
+            font-size: 12px;
         }
-        /* MOBILE RESPONSIVE DESIGN */
-        @media (max-width: 600px) {
+
+        @media (max-width: 800px) {
             nav {
-                padding: 18px 5%;
+                flex-direction: column;
             }
-            .logo {
-                font-size: 14px;
+
+            .nav-links {
+                justify-content: center;
             }
+
             .hero {
-                min-height: 520px;
-                padding: 75px 6%;
+                grid-template-columns: 1fr;
+                padding: 50px 7%;
             }
-            .hero p {
-                font-size: 15px;
+
+            .hero-image {
+                height: 280px;
             }
-            .introduction {
-                padding: 60px 5%;
+
+            .cards {
+                grid-template-columns: 1fr;
             }
-            .intro-card {
-                padding: 24px 18px;
+
+            .benefit-grid {
+                grid-template-columns: 1fr;
             }
-            .intro-card p {
-                font-size: 15px;
-            }
-            .intro-card h3 {
-                font-size: 20px;
+
+            .benefits {
+                padding: 25px;
             }
         }
     </style>
 </head>
+
 <body>
-    <!-- NAVIGATION BAR -->
+
     <nav>
-        <div class="logo">
-            TIME-RICH<span>.</span>
+        <a href="index.html" class="logo">TIME-RICH.</a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="where-your-time-go.html">Time Audit</a>
+            <a href="understand-yourself.html">Self-Awareness</a>
+            <a href="discover-your-direction.html">Your Direction</a>
+            <a href="beat-procrastination.html">Take Action</a>
         </div>
-        <a href="#introduction">Introduction</a>
     </nav>
-    <!-- HERO SECTION -->
+
     <header class="hero">
-        <div class="hero-content">
-            <div class="tag">
-                THE SELF-UPGRADE PLAYBOOK
-            </div>
+        <div>
+            <span class="eyebrow">THE SELF-UPGRADE PLAYBOOK</span>
+
             <h1>
                 TIME-RICH,<br>
-                <span>MIND-SHIFT.</span>
+                <span>MIND-SHIFT</span>
             </h1>
-            <p>
-                Your time is your most valuable resource.
-                Learn to manage it consciously, build better habits,
-                and turn your everyday actions into meaningful progress.
+
+            <p class="hero-text">
+                رحلتك نحو فهم وقتك، واكتشاف نفسك، وتحديد أهدافك،
+                وبناء عادات تساعدك تتقدمي خطوة بخطوة.
+                ابدئي بفهم حياتك الحالية، وبعدها اختاري التغيير اللي
+                يستحق تبدأي بيه.
             </p>
-            <a href="#introduction" class="button">
+
+            <a href="where-your-time-go.html" class="button">
                 Start Your Journey →
             </a>
         </div>
+
+        <img
+            class="hero-image"
+            src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1100&q=85"
+            alt="مكتب للتخطيط وتنظيم الوقت"
+        >
     </header>
-    <!-- INTRODUCTION SECTION -->
-    <main>
-        <section class="introduction" id="introduction">
-            <div class="section-label">
-                INTRODUCTION
-            </div>
-            <div class="intro-card">
-                <p dir="rtl">
-                    الوقت من أهم الموارد اللي يمتلكها الإنسان،
-                    لأنه مورد محدود لا يمكن استرجاعه بعد مروره.
-                    ومع ذلك، كتير مننا بيعدّي عليه يوم كامل من غير
-                    ما يحقق الحاجات اللي فعلًا تهمه، وبيوصل لنهاية
-                    اليوم وهو حاسس إنه كان مشغول، لكن مش بالضرورة
-                    يكون اتقدم خطوة حقيقية ناحية أهدافه.
-                </p>
-                <p dir="rtl">
-                    المشكلة مش دايمًا إننا معندناش وقت كفاية،
-                    لكن أحيانًا بتكون في الطريقة اللي بنستخدم بيها
-                    وقتنا، والأولويات اللي بنختارها، والعادات اللي
-                    بتتحكم في يومنا من غير ما ناخد بالنا.
-                    فممكن ساعات طويلة تضيع في التشتت وتأجيل المهام،
-                    بينما حاجات بسيطة ومهمة تفضل مستنية لوقت تاني.
-                </p>
-                <h3 dir="rtl">
-                    هل المشكلة في الوقت، ولا في طريقة استخدامه؟
-                </h3>
-                <p dir="rtl">
-                    تنظيم الوقت مش معناه إننا نحول يومنا لجدول
-                    مليان بالمهام، أو إننا نشتغل طول الوقت من غير
-                    راحة. المعنى الحقيقي هو إننا نتعلم نحدد أولوياتنا،
-                    ونفرق بين المهم والعاجل، ونخصص وقتًا للتعلم
-                    والتطوير الشخصي والراحة والعلاقات الإنسانية.
-                </p>
-                <p dir="rtl">
-                    ومن هنا بتبدأ رحلة تطوير الذات: إننا نفهم
-                    عاداتنا الحالية، ونكتشف مصادر التشتت، ونحدد
-                    أهدافًا واضحة، وبعدها نحول الأهداف دي لخطوات
-                    صغيرة نقدر نلتزم بيها ونراجع تقدمنا باستمرار.
-                    فالتغيير الحقيقي مش بيحصل في يوم واحد،
-                    لكنه نتيجة قرارات صغيرة بنكررها مع الوقت.
-                </p>
-                <h3 dir="rtl">
-                    من الوعي إلى التغيير
-                </h3>
-                <p dir="rtl">
-                    مشروع TIME-RICH, MIND-SHIFT: THE SELF-UPGRADE
-                    PLAYBOOK بيقدم رحلة عملية تساعدنا نبص لوقتنا
-                    وعاداتنا وأهدافنا بطريقة مختلفة. بدل ما يكون
-                    التركيز على إننا ننجز أكبر عدد من المهام،
-                    هنركز على إننا نختار المهام الصح، ونبني عادات
-                    أفضل، ونستخدم وقتنا بشكل يخدم حياتنا وتطورنا.
-                </p>
-                <div class="highlight" dir="rtl">
-                    وقتك بيمر بالفعل، لكن السؤال الحقيقي هو:
-                    بتستثمره في إيه؟
+
+    <section class="intro" id="introduction">
+        <span class="section-label">INTRODUCTION</span>
+        <h2>مقدمة المشروع</h2>
+
+        <p>
+            في عالم مليء بالمسؤوليات والمهام اليومية والتغيرات المستمرة،
+            أصبح تنظيم الوقت وتطوير الذات من أهم المهارات التي يحتاج إليها
+            الإنسان لتحقيق التوازن والنجاح في حياته. فكل يوم يمنحنا أربعًا
+            وعشرين ساعة، ولكن الاختلاف الحقيقي لا يكمن في عدد الساعات التي
+            نمتلكها، بل في الطريقة التي نستخدمها بها، والقرارات التي نتخذها،
+            والأولويات التي نختار أن نمنحها اهتمامنا.
+        </p>
+
+        <p>
+            الوقت من أثمن الموارد التي نمتلكها؛ لأنه لا يمكن استرجاعه بعد
+            مروره. ومع ذلك، قد تمر ساعات طويلة بين استخدام الهاتف وتأجيل
+            المهام والانشغال بأمور لا تضيف قيمة حقيقية إلى حياتنا. لذلك،
+            فإن الوعي بالوقت وفهم عاداتنا اليومية يمثلان بداية مهمة نحو
+            التغيير.
+        </p>
+
+        <p>
+            لا تعني إدارة الوقت أن نملأ كل دقيقة بالعمل، بل أن نحقق توازنًا
+            بين الدراسة أو العمل والراحة والصحة والعلاقات الاجتماعية
+            والأهداف الشخصية. فالحياة المتوازنة تعتمد على معرفة ما يستحق
+            وقتنا واهتمامنا، واتخاذ قرارات تتوافق مع أهدافنا وقيمنا.
+        </p>
+
+        <p>
+            يقدم مشروع
+            <strong>TIME-RICH, MIND-SHIFT: THE SELF-UPGRADE PLAYBOOK</strong>
+            رحلة عملية تبدأ بتحليل الوقت والعادات اليومية، ثم فهم الذات
+            واكتشاف نقاط القوة والجوانب التي تحتاج إلى تطوير، يلي ذلك
+            تحديد الأهداف، وأخيرًا تعلم طرق التعامل مع التسويف وتحويل
+            الخطط إلى خطوات واقعية.
+        </p>
+
+        <p>
+            يعتمد المشروع على فكرة أن التغيير المستمر لا يحدث في يوم واحد،
+            بل يبدأ بخطوات صغيرة وواعية تتكرر مع الوقت. والهدف ليس مجرد
+            تنظيم الساعات، بل اكتساب طريقة تفكير تساعدنا على تطوير أنفسنا
+            وبناء عادات أفضل وتحقيق أهدافنا بصورة أكثر وعيًا.
+        </p>
+
+        <div class="quote">
+            <strong>Time is not just something we spend; it is something we invest.</strong>
+            <br>
+            الوقت ليس مجرد شيء نقضيه، بل فرصة نستثمرها في بناء أنفسنا ومستقبلنا.
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="section-heading">
+            <span class="section-label">EXPLORE THE PLAYBOOK</span>
+            <h2>Explore Your Journey</h2>
+            <p>
+                أربع خطوات عملية تساعدك على فهم نفسك، وتنظيم وقتك،
+                والانتقال من التفكير إلى التنفيذ.
+            </p>
+        </div>
+
+        <div class="cards">
+
+            <article class="card">
+                <img
+                    src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=900&q=80"
+                    alt="مفكرة لتخطيط المهام اليومية"
+                    loading="lazy"
+                >
+
+                <div class="card-content">
+                    <span class="chapter">CHAPTER 01</span>
+                    <h3>Where Your Time Goes</h3>
+                    <p>
+                        اكتشفي كيف تقضين يومك، وحددي الأنشطة التي تستهلك
+                        وقتك، واستخدمي أداة عملية لتحليل ساعات اليوم
+                        ومعرفة ما يحتاج إلى تعديل.
+                    </p>
+                    <a class="card-link" href="where-your-time-go.html">
+                        Explore Time Audit →
+                    </a>
                 </div>
+            </article>
+
+            <article class="card">
+                <img
+                    src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=900&q=80"
+                    alt="دفتر وقلم للتأمل والتفكير"
+                    loading="lazy"
+                >
+
+                <div class="card-content">
+                    <span class="chapter">CHAPTER 02</span>
+                    <h3>Understand Yourself</h3>
+                    <p>
+                        تعرّفي على عاداتك ونقاط قوتك والتحديات التي
+                        تواجهك من خلال أسئلة عملية تساعدك على التفكير
+                        في نفسك بطريقة أوضح.
+                    </p>
+                    <a class="card-link" href="understand-yourself.html">
+                        Discover Yourself →
+                    </a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img
+                    src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80"
+                    alt="كتابة الأهداف والخطط في دفتر"
+                    loading="lazy"
+                >
+
+                <div class="card-content">
+                    <span class="chapter">CHAPTER 03</span>
+                    <h3>Discover Your Direction</h3>
+                    <p>
+                        حوّلي أفكارك إلى أهداف واضحة، وحددي أولوياتك،
+                        وقسّمي كل هدف إلى خطوات صغيرة يمكنك متابعتها.
+                    </p>
+                    <a class="card-link" href="discover-your-direction.html">
+                        Plan Your Goals →
+                    </a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img
+                    src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=900&q=80"
+                    alt="قائمة مهام يومية للتنظيم والإنجاز"
+                    loading="lazy"
+                >
+
+                <div class="card-content">
+                    <span class="chapter">CHAPTER 04</span>
+                    <h3>Beat Procrastination</h3>
+                    <p>
+                        تعلّمي كيف تتعاملين مع التسويف، وتبدئين المهام
+                        الصعبة بخطوات بسيطة، وتتابعين إنجازك باستخدام
+                        أدوات عملية للتركيز.
+                    </p>
+                    <a class="card-link" href="beat-procrastination.html">
+                        Take Action →
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="benefits">
+        <span class="section-label">WHAT YOU WILL GAIN</span>
+        <h2>What Will You Learn?</h2>
+
+        <div class="benefit-grid">
+            <div class="benefit">
+                <h3>01. Awareness</h3>
+                <p>
+                    فهم أفضل لعاداتك اليومية وكيفية استخدام وقتك.
+                </p>
             </div>
-        </section>
-    </main>
-    <!-- FOOTER -->
+
+            <div class="benefit">
+                <h3>02. Direction</h3>
+                <p>
+                    تحديد الأولويات والأهداف بدلًا من التحرك دون خطة.
+                </p>
+            </div>
+
+            <div class="benefit">
+                <h3>03. Action</h3>
+                <p>
+                    تطبيق خطوات واقعية ومتابعة التقدم بدلًا من الاكتفاء بالتخطيط.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="closing">
+        <span class="section-label">YOUR NEXT CHAPTER STARTS NOW</span>
+        <h2>Ready to Upgrade Yourself?</h2>
+
+        <p>
+            مش مطلوب منك تغيّري كل حاجة النهارده.
+            ابدئي بخطوة واحدة، وافهمي وقتك قبل ما تحاولي تغيّريه.
+        </p>
+
+        <a href="where-your-time-go.html" class="button">
+            Start Your Journey →
+        </a>
+    </section>
+
     <footer>
         TIME-RICH, MIND-SHIFT: THE SELF-UPGRADE PLAYBOOK
         <br>
-        Small changes. Better habits. A more intentional life.
+        وقتك فرصة، ووعيك بداية التغيير.
     </footer>
+
 </body>
 </html>
