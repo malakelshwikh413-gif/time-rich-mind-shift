@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beat Procrastination & Distractions | TIME-RICH, MIND-SHIFT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Tahoma, sans-serif;
+            background-color: #f5f7fb;
+            color: #17243d;
+            line-height: 1.9;
+        }
+
+        header {
+            background-color: #101c35;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 19px;
+            font-weight: bold;
+            direction: ltr;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 18px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #80b5ff;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #101c35, #244b83);
+            color: white;
+            text-align: center;
+            padding: 75px 20px;
+        }
+
+        .step {
+            color: #9ec8ff;
+            font-size: 13px;
+            letter-spacing: 2px;
+            direction: ltr;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin: 15px 0;
+            direction: ltr;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #e1eaf8;
+            font-size: 17px;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 950px;
+            margin: 50px auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title span {
+            color: #3479d4;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            direction: ltr;
+            display: block;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            margin-top: 8px;
+            color: #101c35;
+        }
+
+        .article-card {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px rgba(16, 28, 53, 0.06);
+            border-right: 4px solid #3479d4;
+        }
+
+        .article-card h3 {
+            color: #244b83;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .article-card p {
+            font-size: 16px;
+            color: #4a5568;
+            margin-bottom: 12px;
+        }
+
+        .highlight {
+            background-color: #eaf2ff;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+            color: #244b83;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .tool-card {
+            background-color: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px rgba(16, 28, 53, 0.07);
+        }
+
+        .tool-card h3 {
+            font-size: 24px;
+            color: #101c35;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .tool-description {
+            text-align: center;
+            color: #667085;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #253858;
+        }
+
+        .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccd5e2;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+            font-family: Arial, Tahoma, sans-serif;
+        }
+
+        .form-group select:focus, .form-group textarea:focus {
+            border-color: #3479d4;
+        }
+
+        .action-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #244b83;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .action-button:hover {
+            background-color: #3479d4;
+        }
+
+        .result-box {
+            display: none;
+            margin-top: 25px;
+            padding: 22px;
+            background-color: #edf4ff;
+            border-radius: 10px;
+            border-right: 4px solid #3479d4;
+        }
+
+        .result-box h4 {
+            color: #244b83;
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .result-box p {
+            color: #253858;
+            font-size: 16px;
+        }
+
+        .next-step {
+            text-align: center;
+            margin-top: 45px;
+            padding: 30px;
+            background-color: #101c35;
+            color: white;
+            border-radius: 12px;
+        }
+
+        .next-step h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .next-step p {
+            color: #dce5f3;
+            margin-bottom: 20px;
+        }
+
+        .next-button {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #244b83;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        .next-button:hover {
+            background-color: #dceaff;
+        }
+
+        footer {
+            background-color: #101c35;
+            color: #dce5f3;
+            text-align: center;
+            padding: 25px;
+            margin-top: 60px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 0 7px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .article-card, .tool-card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">TIME-RICH, MIND-SHIFT</div>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="time-audit.html">تحليل الوقت</a>
+            <a href="understand-yourself.html">فهم الذات</a>
+            <a href="#focus-tool">مُحلل المشتتات</a>
+            <a href="discover-your-direction.html">اكتشف اتجاهك</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="step">STEP 03 · FOCUS & ACTION</div>
+        <h1>BEAT PROCRASTINATION</h1>
+        <p>
+            تغلب على التشتت والتسويف، وتعلّم كيف تحول النوايا والأهداف إلى خطوات إنجاز واقعية وفعالة.
+        </p>
+    </section>
+
+    <main class="container">
+
+        <!-- الجزء النظرى -->
+        <section id="article">
+
+            <div class="section-title">
+                <span>FOCUS & PRODUCTIVITY</span>
+                <h2>التغلب على التسويف والمشتتات</h2>
+            </div>
+
+            <div class="article-card">
+                <h3>1. لماذا نسوف ونؤجل المهام؟</h3>
+                <p>
+                    التسويف ليس مجرد كسل أو سوء تنظيم للوقت، بل هو غالبًا محاولة للهروب من مشاعر عدم الراحة، مثل الخوف من الفشل، أو الشعور بأن المهمة ضخمة ومعقدة، أو عدم وجود هدف واضح من البداية.
+                </p>
+                <p>
+                    عندما نؤجل مهمة مهمة ونستبدلها بنشاط أسهل (مثل تصفح وسائل التواصل)، يشعر العقل براحة مؤقتة، لكن هذا الشعور سرعان ما يتحول إلى ضغط نفسي وتوتر مع اقتراب المواعيد النهائية.
+                </p>
+            </div>
+
+            <div class="article-card">
+                <h3>2. التحكم في المشتتات الرقمية</h3>
+                <p>
+                    في عالمنا اليوم، تُعد الإشعارات والتطبيقات المشتت الأكبر للتركيز. كل إشعار يلتقط انتباهك يحتاج عقلك بعده إلى عدة دقائق ليستعيد مستواه السابق من التركيز والعمق.
+                </p>
+                <p>
+                    الحل لا يكمن في إلغاء التكنولوجيا، بل في وضع حدود واضحة لها، مثل تفعيل وضع عدم الإزعاج أثناء فترة العمل، وإبعاد الهاتف عن مكان الدراسة.
+                </p>
+            </div>
+
+            <div class="article-card">
+                <h3>3. استراتيجيات عملية للانجاز</h3>
+                <p>
+                    <strong>قاعدة الـ 5 دقائق:</strong> أخبر نفسك أنك ستعمل على المهمة لمدة 5 دقائق فقط. غالبًا ما يكون البدء هو الجزء الأصبح، وبمجرد أن تبدأ، يسهل عليك الاستمرار.
+                </p>
+                <p>
+                    <strong>تقسيم المهام:</strong> لا تضع في جدولك "إنهاء المشروع"، بل قسمه إلى خطوات صغيرة جداً (مثل: كتابة المقدمة، أو تجهيز العناوين الرئيسية).
+                </p>
+            </div>
+
+            <div class="highlight">
+                التركيز لا يعني العمل طوال الوقت، بل حماية وقتك من المشتتات لتنجز في وقت أقل وبجودة أعلى.
+            </div>
+
+        </section>
+
+        <!-- التفاعل والتطبيق -->
+        <section id="focus-tool">
+
+            <div class="section-title">
+                <span>PRACTICAL TOOL</span>
+                <h2>مُحلل المشتتات وخطة التركيز</h2>
+            </div>
+
+            <div class="tool-card">
+                <h3>تحديد المشتت الخفي</h3>
+                <p class="tool-description">
+                    حدد أكبر مشتت يواجهك حالياً، واكتشف الخطة المناسبة للتعامل معه والتغلب عليه.
+                </p>
+
+                <div class="form-group">
+                    <label for="distractor">ما هو أكبر مشتت يعطل إنجازك عادةً؟</label>
+                    <select id="distractor">
+                        <option value="">-- اختر المشتت الرئيسي --</option>
+                        <option value="phone">الإشعارات ووسائل التواصل الاجتماعي</option>
+                        <option value="overwhelmed">الشعور بأن المهمة كبيرة وصعبة جداً</option>
+                        <option value="perfectionism">البحث عن الكمالية والرغبة في جعل كل شيء مثالياً</option>
+                        <option value="fatigue">الإرهاق وقلة الطاقة والتركيز</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="actionCommitment">اكتب التزاماً صغيراً ستطبقه اليوم لتقليل هذا المشتت:</label>
+                    <textarea id="actionCommitment" placeholder="مثال: سأضع الهاتف في غرفة أخرى أثناء الدراسة لمدة ساعة..."></textarea>
+                </div>
+
+                <button class="action-button" onclick="analyzeDistraction()">تحليل الحل واظهار الخطة</button>
+
+                <div class="result-box" id="resultBox" aria-live="polite">
+                    <h4 id="planTitle">الخطة المقترحة:</h4>
+                    <p id="planText"></p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- الخطوة التالية -->
+        <section class="next-step">
+            <h3>الخطوة التالية: اكتشف اتجاهك واصنع خطتك</h3>
+            <p>
+                بعد أن عرفت كيف تحمي وقتك وتتغلب على التشتت، حان الوقت لتحديد أهدافك واكتشف اتجاهك المستقبلي بوضوح.
+            </p>
+            <a href="discover-your-direction.html" class="next-button">اكتشف اتجاهك الآن ←</a>
+        </section>
+
+    </main>
+
+    <footer>
+        TIME-RICH, MIND-SHIFT: THE SELF-UPGRADE PLAYBOOK
+        <br>
+        افهم وقتك، تغلب على تشتتك، وصنع أثرك.
+    </footer>
+
+    <script>
+        function analyzeDistraction() {
+            const distractor = document.getElementById("distractor").value;
+            const commitment = document.getElementById("actionCommitment").value.trim();
+            const resultBox = document.getElementById("resultBox");
+            const planTitle = document.getElementById("planTitle");
+            const planText = document.getElementById("planText");
+
+            if (!distractor) {
+                alert("من فضلك اختر المشتت الرئيسي أولاً.");
+                return;
+            }
+
+            resultBox.style.display = "block";
+
+            let strategy = "";
+
+            if (distractor === "phone") {
+                planTitle.textContent = "استراتيجية تقليل المشتتات الرقمية:";
+                strategy = "جرب استراتيجية 'بيئة العمل النظيفة'. قم بتفعيل وضع عدم الإزعاج، ضع الهاتف بعيداً عن مجال رؤيتك، واستخدم تقنية البومودورو (25 دقيقة تركيز كامل يليه 5 دقائق راحة).";
+            } else if (distractor === "overwhelmed") {
+                planTitle.textContent = "استراتيجية التفكيك والتقسيم:";
+                strategy = "المهمة الكبيرة تسبب شللاً للتفكير. اختر أصغر جزء ممكن لا يستغرق أكثر من 5 دقائق وابدأ به فوراً دون التفكير في بقية المهمة الآن.";
+            } else if (distractor === "perfectionism") {
+                planTitle.textContent = "استراتيجية 'الإنجاز أفضل من الكمال':";
+                strategy = "تذكر أن النسخة الأولى المكتملة أفضل بكثير من النسخة المثالية التي لم تكتمل أبداً. ابدأ بالتسودة الأولى وأصلحها لاحقاً.";
+            } else if (distractor === "fatigue") {
+                planTitle.textContent = "استراتيجية إدارة الطاقة:";
+                strategy = "التسويف هنا ناتج عن نفاد الطاقة وليس الكسل. خذ استراحة قصيرة، اشرب ماء، أو اخرج للمشي دقائق، ثم استأنف العمل عندما يستعيد عقلك نشاطه.";
+            }
+
+            if (commitment) {
+strategy += "\n\nالتزامك الشخصي: \"" + commitment + "\" هو بداية ممتازة لترجمة هذه الخطط إلى واقع!";            }
+
+            planText.textContent = strategy;
+
+            resultBox.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+        }
+    </script>
+</body>
+</html>

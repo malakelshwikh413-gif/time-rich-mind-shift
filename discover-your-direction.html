@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Discover Your Direction | TIME-RICH, MIND-SHIFT</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1120;
+            color: #f1f5f9;
+            line-height: 1.9;
+        }
+
+        header {
+            padding: 22px 8%;
+            background: #111b30;
+            border-bottom: 1px solid #263550;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            color: #65d6ff;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        nav a {
+            color: #dbeafe;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #65d6ff;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 90px 8% 75px;
+            background: linear-gradient(135deg, #111b30, #142c49);
+        }
+
+        .tag {
+            color: #65d6ff;
+            letter-spacing: 3px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: clamp(34px, 6vw, 60px);
+            line-height: 1.2;
+            margin: 20px 0;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: 0 auto;
+            color: #cbd5e1;
+            font-size: 17px;
+        }
+
+        .container {
+            width: 84%;
+            max-width: 1000px;
+            margin: 55px auto;
+        }
+
+        .section {
+            background: #111b30;
+            border: 1px solid #263550;
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            color: #65d6ff;
+            margin-bottom: 18px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #e2e8f0;
+            margin: 15px 0 8px;
+        }
+
+        p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        .arabic {
+            direction: rtl;
+            text-align: right;
+        }
+
+        .arabic ul {
+            padding-right: 25px;
+            color: #cbd5e1;
+        }
+
+        .arabic li {
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            color: #65d6ff;
+            font-weight: bold;
+        }
+
+        .question {
+            margin: 22px 0;
+            padding: 18px;
+            background: #0b1120;
+            border-radius: 12px;
+            border: 1px solid #263550;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #f1f5f9;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #334766;
+            border-radius: 8px;
+            background: #17243a;
+            color: white;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+            margin-top: 7px;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: 2px solid #65d6ff;
+        }
+
+        .button {
+            display: inline-block;
+            background: #65d6ff;
+            color: #0b1120;
+            padding: 13px 23px;
+            border-radius: 9px;
+            border: none;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+            margin-top: 12px;
+        }
+
+        .button:hover {
+            background: #a1e8ff;
+        }
+
+        .result {
+            display: none;
+            background: #0b1120;
+            border: 1px solid #65d6ff;
+            border-radius: 12px;
+            padding: 22px;
+            margin-top: 22px;
+        }
+
+        .result h3 {
+            color: #65d6ff;
+        }
+
+        .next {
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #94a3b8;
+            border-top: 1px solid #263550;
+            font-size: 13px;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                padding: 20px 5%;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .section {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">TIME-RICH, MIND-SHIFT</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="time-audit.html">Time Audit</a>
+            <a href="understand-yourself.html">Understand Yourself</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="tag">STEP 04 — FIND YOUR PATH</div>
+
+        <h1>DISCOVER YOUR<br>DIRECTION</h1>
+
+        <p>
+            You cannot build a meaningful future without knowing what matters
+            to you. Discover your priorities, define your goals, and take the
+            first step toward the person you want to become.
+        </p>
+    </section>
+
+    <main class="container">
+
+        <section class="section arabic">
+            <h2>اكتشف اتجاهك في الحياة</h2>
+
+            <p>
+                بعد ما بدأت تفهم وقتك وتتعرف على نفسك، جه الوقت إنك تسأل سؤالًا
+                مهمًا: أنا عايز أوصل لإيه؟
+            </p>
+
+            <p>
+                وجود أهداف واضحة بيساعدك تستخدم وقتك ومجهودك بطريقة أفضل.
+                مش لازم تكون عارف مستقبلك بالكامل، ومش مطلوب منك تحقق كل حاجة
+                مرة واحدة. المهم إنك تبدأ بخطوة صغيرة في اتجاه مناسب ليك.
+            </p>
+
+            <p>
+                <span class="highlight">الهدف مش إنك تعرف كل الإجابات،</span>
+                لكن إنك تبدأ تسأل الأسئلة الصح وتكتشف إيه اللي يستحق وقتك واهتمامك.
+            </p>
+        </section>
+
+        <section class="section arabic">
+            <h2>١. حدد أولوياتك</h2>
+
+            <p>
+                الأولويات هي الحاجات اللي ليها أهمية حقيقية في حياتك، وبتستحق
+                إنك تخصص لها وقتًا ومجهودًا.
+            </p>
+
+            <ul>
+                <li>التعلم وتطوير المهارات.</li>
+                <li>الصحة الجسدية والنفسية.</li>
+                <li>العلاقات المهمة في حياتك.</li>
+                <li>الدراسة أو النجاح المهني.</li>
+                <li>الاستقلالية وتحقيق الأهداف الشخصية.</li>
+            </ul>
+
+            <p>
+                مش مطلوب منك تختار كل حاجة. فكر في أهم ثلاث أولويات عندك حاليًا،
+                وخلي قراراتك اليومية تساعدك تقرب منها.
+            </p>
+        </section>
+
+        <section class="section arabic">
+            <h2>٢. حوّل أحلامك إلى أهداف</h2>
+
+            <p>
+                فيه فرق بين إنك تقول «أنا عايز أطور نفسي» وبين إنك تحدد
+                مهارة معينة هتتعلمها، والوقت اللي هتخصصه لها، والخطوة اللي هتبدأ بها.
+            </p>
+
+            <h3>الهدف الواضح لازم يكون:</h3>
+
+            <ul>
+                <li><strong>محدد:</strong> عارف إنت عايز تحقق إيه.</li>
+                <li><strong>قابل للقياس:</strong> تقدر تلاحظ تقدمك.</li>
+                <li><strong>واقعي:</strong> يناسب ظروفك وإمكانياتك.</li>
+                <li><strong>مرتبط بوقت:</strong> عندك موعد للمراجعة.</li>
+            </ul>
+
+            <p>
+                مثال: بدلًا من «هتعلم إنجليزي»، ممكن يكون هدفك:
+                «هتدرب على الإنجليزي لمدة 20 دقيقة يوميًا خلال الشهر القادم».
+            </p>
+        </section>
+
+        <section class="section arabic">
+            <h2>٣. خطتك الشخصية</h2>
+
+            <p>
+                دلوقتي استخدم الأسئلة دي عشان تبدأ ترسم اتجاهك. مفيش إجابات
+                مثالية؛ اكتب إجابات حقيقية تناسبك إنت.
+            </p>
+
+            <form id="goalForm">
+
+                <div class="question">
+                    <label for="priority">
+                        إيه أهم حاجة عايز تركز عليها في حياتك حاليًا؟
+                    </label>
+
+                    <input
+                        type="text"
+                        id="priority"
+                        placeholder="مثال: الدراسة، التعلم، تطوير مهارة..."
+                        required
+                    >
+                </div>
+
+                <div class="question">
+                    <label for="goal">
+                        إيه هدف واحد نفسك تحققه خلال الشهر الجاي؟
+                    </label>
+
+                    <textarea
+                        id="goal"
+                        placeholder="اكتب هدفك هنا..."
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="question">
+                    <label for="reason">
+                        ليه الهدف ده مهم بالنسبة لك؟
+                    </label>
+
+                    <textarea
+                        id="reason"
+                        placeholder="إيه اللي هيخليك مهتم إنك تحققه؟"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="question">
+                    <label for="firstStep">
+                        إيه أول خطوة صغيرة تقدر تبدأ بها؟
+                    </label>
+
+                    <textarea
+                        id="firstStep"
+                        placeholder="حدد خطوة تقدر تعملها فعلًا..."
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="question">
+                    <label for="deadline">
+                        إمتى هتراجع تقدمك؟
+                    </label>
+
+                    <input type="date" id="deadline" required>
+                </div>
+
+                <button type="submit" class="button">
+                    Create My Action Plan →
+                </button>
+
+            </form>
+
+            <div class="result" id="result">
+                <h3>خطتك بدأت تتشكل! 🎯</h3>
+
+                <p>
+                    <strong>أولويتك:</strong>
+                    <span id="showPriority"></span>
+                </p>
+
+                <p>
+                    <strong>هدفك:</strong>
+                    <span id="showGoal"></span>
+                </p>
+
+                <p>
+                    <strong>سبب اختيارك:</strong>
+                    <span id="showReason"></span>
+                </p>
+
+                <p>
+                    <strong>أول خطوة:</strong>
+                    <span id="showStep"></span>
+                </p>
+
+                <p>
+                    <strong>موعد مراجعة تقدمك:</strong>
+                    <span id="showDeadline"></span>
+                </p>
+
+                <p>
+                    افتكر إن التقدم مش محتاج خطوات ضخمة؛ محتاج خطوات صغيرة
+                    تستمر عليها.
+                </p>
+
+                <button type="button" class="button" onclick="window.print()">
+                    Print My Plan
+                </button>
+            </div>
+        </section>
+
+        <section class="section arabic">
+            <h2>٤. الاستمرار أهم من الكمال</h2>
+
+            <p>
+                ممكن تقابل أيام تحس فيها إنك مش بتتقدم، أو تكتشف إن هدفك محتاج
+                تعديل. ده طبيعي، ومش معناه إنك فشلت.
+            </p>
+
+            <p>
+                راجع أهدافك من وقت للتاني، وشوف إيه اللي نفع معاك وإيه اللي محتاج
+                تغيير. المرونة مش معناها إنك تتخلى عن هدفك؛ معناها إنك تتعلم
+                وتختار طريقة أفضل للوصول له.
+            </p>
+
+            <p>
+                <span class="highlight">
+                    مستقبلك بيتشكل من القرارات الصغيرة اللي بتاخدها باستمرار.
+                </span>
+            </p>
+        </section>
+
+        <div class="next">
+            <a href="understand-yourself.html" class="button">
+                ← Back to Understand Yourself
+            </a>
+        </div>
+
+    </main>
+
+    <footer>
+        TIME-RICH, MIND-SHIFT: THE SELF-UPGRADE PLAYBOOK
+        <br>
+        Small Steps. Clear Goals. Meaningful Growth.
+    </footer>
+
+    <script>
+        const goalForm = document.getElementById("goalForm");
+
+        goalForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            document.getElementById("showPriority").textContent =
+                document.getElementById("priority").value;
+
+            document.getElementById("showGoal").textContent =
+                document.getElementById("goal").value;
+
+            document.getElementById("showReason").textContent =
+                document.getElementById("reason").value;
+
+            document.getElementById("showStep").textContent =
+                document.getElementById("firstStep").value;
+
+            const deadline =
+                document.getElementById("deadline").value;
+
+            document.getElementById("showDeadline").textContent =
+                deadline;
+
+            document.getElementById("result").style.display = "block";
+
+            document.getElementById("result").scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    </script>
+
+</body>
+</html>

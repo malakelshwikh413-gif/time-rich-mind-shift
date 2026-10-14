@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Where Does Your Time Go? | TIME-RICH, MIND-SHIFT</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Tahoma, sans-serif;
+            background-color: #f5f7fb;
+            color: #17243d;
+            line-height: 1.9;
+        }
+
+        header {
+            background-color: #101c35;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 19px;
+            font-weight: bold;
+            direction: ltr;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #80b5ff;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #101c35, #244b83);
+            color: white;
+            text-align: center;
+            padding: 75px 20px;
+        }
+
+        .step {
+            color: #9ec8ff;
+            font-size: 13px;
+            letter-spacing: 2px;
+            direction: ltr;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin: 15px 0;
+            direction: ltr;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #e1eaf8;
+            font-size: 17px;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 950px;
+            margin: 50px auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title span {
+            color: #3479d4;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            direction: ltr;
+            display: block;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            margin-top: 8px;
+            color: #101c35;
+        }
+
+        .article-card {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px rgba(16, 28, 53, 0.06);
+            border-right: 4px solid #3479d4;
+        }
+
+        .article-card h3 {
+            color: #244b83;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .article-card p {
+            font-size: 16px;
+            color: #4a5568;
+            margin-bottom: 12px;
+        }
+
+        .highlight {
+            background-color: #eaf2ff;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+            color: #244b83;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .audit-card {
+            background-color: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px rgba(16, 28, 53, 0.07);
+        }
+
+        .audit-card h3 {
+            text-align: center;
+            font-size: 25px;
+            margin-bottom: 10px;
+            color: #101c35;
+        }
+
+        .audit-description {
+            text-align: center;
+            color: #667085;
+            margin-bottom: 30px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #253858;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccd5e2;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: #3479d4;
+        }
+
+        .calculate-button {
+            display: block;
+            width: 100%;
+            margin-top: 28px;
+            padding: 15px;
+            background-color: #244b83;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .calculate-button:hover {
+            background-color: #3479d4;
+        }
+
+        .results {
+            display: none;
+            background-color: #edf4ff;
+            margin-top: 25px;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .results h3 {
+            margin-bottom: 15px;
+            color: #244b83;
+        }
+
+        .results p {
+            margin: 8px 0;
+            font-size: 17px;
+        }
+
+        .reflection {
+            margin-top: 30px;
+            padding: 25px;
+            background-color: #101c35;
+            color: white;
+            border-radius: 12px;
+        }
+
+        .reflection h3 {
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .reflection p {
+            color: #e1eaf8;
+            margin-bottom: 15px;
+        }
+
+        .reflection textarea {
+            width: 100%;
+            min-height: 110px;
+            padding: 15px;
+            border-radius: 8px;
+            border: none;
+            resize: vertical;
+            font-family: Arial, Tahoma, sans-serif;
+            font-size: 15px;
+        }
+
+        footer {
+            background-color: #101c35;
+            color: #dce5f3;
+            text-align: center;
+            padding: 25px;
+            margin-top: 60px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .article-card,
+            .audit-card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">TIME-RICH, MIND-SHIFT</div>
+
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="#article">الموضوع</a>
+            <a href="#time-audit">اختبار الوقت</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="step">STEP 01 · SELF-AWARENESS</div>
+
+        <h1>WHERE DOES YOUR TIME GO?</h1>
+
+        <p>
+            اكتشف أين يذهب وقتك كل يوم، وافهم عاداتك،
+            وابدأ في اتخاذ قرارات أفضل تساعدك على تحقيق أهدافك.
+        </p>
+    </section>
+
+    <main class="container">
+
+        <!-- الموضوع النظري -->
+
+        <section id="article">
+
+            <div class="section-title">
+                <span>TIME AWARENESS</span>
+                <h2>أين يذهب وقتك؟</h2>
+            </div>
+
+            <div class="article-card">
+                <h3>1. فهم قيمة الوقت</h3>
+
+                <p>
+                    يُعد الوقت من أهم الموارد التي يمتلكها الإنسان،
+                    فهو مورد لا يمكن استرجاعه أو تعويضه بعد مروره.
+                    وعلى الرغم من أن كل شخص يمتلك 24 ساعة يوميًا،
+                    فإن طريقة استخدام هذه الساعات تختلف من شخص لآخر
+                    وفقًا للأولويات والعادات والقرارات اليومية.
+                </p>
+
+                <p>
+                    فهناك من يستغل وقته في التعلم والعمل وتطوير نفسه،
+                    وهناك من تمر ساعات يومه دون أن يحقق ما كان يخطط له.
+                    لذلك، فإن إدارة الوقت لا تبدأ بوضع جدول مزدحم،
+                    بل تبدأ بفهم الطريقة التي نستخدم بها وقتنا بالفعل.
+                </p>
+            </div>
+
+            <div class="article-card">
+                <h3>2. كيف نفقد وقتنا دون أن نشعر؟</h3>
+
+                <p>
+                    لا يعني إهدار الوقت بالضرورة أن نقضي اليوم دون القيام
+                    بأي شيء. فقد يحدث ذلك عندما نقضي وقتًا طويلًا على
+                    وسائل التواصل الاجتماعي، أو نؤجل المهام المهمة،
+                    أو ننتقل من نشاط إلى آخر دون وجود هدف واضح.
+                </p>
+
+                <p>
+                    وقد تبدو هذه التصرفات بسيطة في البداية، لكنها عندما
+                    تتكرر يوميًا يمكن أن تقلل من قدرتنا على الإنجاز،
+                    وتزيد الشعور بالضغط، وتجعل تحقيق أهدافنا أكثر صعوبة.
+                </p>
+
+                <p>
+                    ومن المهم أن ندرك أن الراحة والترفيه ليسا إهدارًا للوقت
+                    في حد ذاتهما؛ فهما جزء طبيعي من الحياة. المشكلة تبدأ
+                    عندما تستهلك بعض الأنشطة وقتًا أكبر مما نريد،
+                    على حساب الدراسة أو العمل أو صحتنا أو أهدافنا الشخصية.
+                </p>
+            </div>
+
+            <div class="article-card">
+                <h3>3. الوعي بالوقت: الخطوة الأولى للتغيير</h3>
+
+                <p>
+                    الوعي بالوقت هو أن نعرف كيف نوزع ساعات يومنا بين
+                    الأنشطة المختلفة، وأن نلاحظ العادات التي تؤثر في
+                    قدرتنا على الإنجاز. فعندما نتابع استخدامنا للوقت،
+                    قد نكتشف أننا نقضي على الهاتف ساعات أكثر مما توقعنا،
+                    أو أننا لا نخصص وقتًا كافيًا للتعلم وتطوير مهاراتنا.
+                </p>
+
+                <p>
+                    يساعدنا هذا الوعي على رؤية يومنا بصورة أكثر وضوحًا،
+                    وفهم الفرق بين الوقت الذي نقضيه في أنشطة ضرورية،
+                    والوقت الذي يمكننا تنظيمه بطريقة أفضل.
+                    فقبل أن نحاول تغيير عاداتنا، علينا أولًا أن نفهمها.
+                </p>
+            </div>
+
+            <div class="article-card">
+                <h3>4. من الوعي إلى العمل</h3>
+
+                <p>
+                    بعد معرفة كيفية استخدام وقتنا، يمكننا البدء في إجراء
+                    تغييرات بسيطة وواقعية، مثل تحديد الأولويات، وتقليل
+                    المشتتات، وتخصيص وقت للمهام المهمة، ووضع جدول يومي
+                    يناسب قدراتنا ومسؤولياتنا.
+                </p>
+
+                <p>
+                    ولا يعني تحسين إدارة الوقت أن نملأ كل دقيقة بالعمل
+                    أو أن نمنع أنفسنا من الراحة. بل يعني أن نستخدم وقتنا
+                    بطريقة تتوافق مع أهدافنا وقيمنا، مع الحفاظ على
+                    التوازن بين المسؤوليات والراحة والحياة الشخصية.
+                </p>
+
+                <p>
+                    تذكّر أن التغيير الحقيقي لا يتطلب أن يصبح يومك مثاليًا
+                    من البداية؛ بل يتطلب أن تفهم عاداتك، وتتخذ قرارات
+                    واعية، وتستمر في تحسينها خطوة بعد خطوة.
+                </p>
+            </div>
+
+            <div class="highlight">
+                افهم كيف تقضي وقتك اليوم، لتتمكن من استخدامه بصورة أفضل غدًا.
+            </div>
+
+        </section>
+
+        <!-- التطبيق العملي -->
+
+        <section id="time-audit">
+
+            <div class="section-title">
+                <span>PRACTICAL ACTIVITY</span>
+                <h2>اختبر كيف تقضي يومك</h2>
+            </div>
+
+            <div class="audit-card">
+
+                <h3>MY DAILY TIME AUDIT</h3>
+
+                <p class="audit-description">
+                    اكتب عدد الساعات التي تقضيها يوميًا في كل نشاط،
+                    ثم اضغط على الزر لمعرفة كيفية توزيع وقتك.
+                </p>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="sleep">النوم (بالساعات)</label>
+                        <input type="number" id="sleep" min="0" max="24"
+                               step="0.5" value="8">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="study">الدراسة أو العمل (بالساعات)</label>
+                        <input type="number" id="study" min="0" max="24"
+                               step="0.5" value="6">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="social">وسائل التواصل الاجتماعي (بالساعات)</label>
+                        <input type="number" id="social" min="0" max="24"
+                               step="0.5" value="3">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="responsibilities">المسؤوليات اليومية (بالساعات)</label>
+                        <input type="number" id="responsibilities"
+                               min="0" max="24" step="0.5" value="3">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="development">التعلم وتطوير الذات (بالساعات)</label>
+                        <input type="number" id="development" min="0"
+                               max="24" step="0.5" value="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rest">الراحة والأنشطة الاجتماعية (بالساعات)</label>
+                        <input type="number" id="rest" min="0" max="24"
+                               step="0.5" value="3">
+                    </div>
+
+                </div>
+
+                <button class="calculate-button" onclick="calculateTime()">
+                    احسب ساعات يومي
+                </button>
+
+                <div class="results" id="results" aria-live="polite">
+                    <h3>نتيجة تحليل وقتك</h3>
+
+                    <p id="totalHours"></p>
+                    <p id="remainingHours"></p>
+                    <p id="message"></p>
+                </div>
+
+                <div class="reflection">
+                    <h3>فكّر في عاداتك</h3>
+
+                    <p>
+                        إذا استطعت تغيير عادة واحدة لتحسين استخدامك لوقتك،
+                        فما العادة التي ستختارها؟ ولماذا؟
+                    </p>
+
+                    <textarea
+                        id="reflectionAnswer"
+                        placeholder="اكتب أفكارك هنا..."
+                    ></textarea>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        TIME-RICH, MIND-SHIFT: THE SELF-UPGRADE PLAYBOOK
+        <br>
+        افهم وقتك، طوّر عاداتك، واصنع تقدمك.
+    </footer>
+
+    <script>
+        function calculateTime() {
+
+            const fields = [
+                { id: "sleep", name: "النوم" },
+                { id: "study", name: "الدراسة أو العمل" },
+                { id: "social", name: "وسائل التواصل الاجتماعي" },
+                { id: "responsibilities", name: "المسؤوليات اليومية" },
+                { id: "development", name: "تطوير الذات" },
+                { id: "rest", name: "الراحة والأنشطة الاجتماعية" }
+            ];
+
+            let total = 0;
+
+            for (let field of fields) {
+
+                const input = document.getElementById(field.id);
+                const value = input.value.trim();
+
+                if (
+                    value === "" ||
+                    !Number.isFinite(Number(value)) ||
+                    Number(value) < 0 ||
+                    Number(value) > 24
+                ) {
+                    alert("من فضلك أدخل عدد ساعات صحيحًا من 0 إلى 24 في خانة " + field.name);
+                    input.focus();
+                    return;
+                }
+
+                total += Number(value);
+            }
+
+            const results = document.getElementById("results");
+            const totalHours = document.getElementById("totalHours");
+            const remainingHours = document.getElementById("remainingHours");
+            const message = document.getElementById("message");
+
+            results.style.display = "block";
+
+            totalHours.textContent =
+                "إجمالي الساعات التي أدخلتها: " + total + " ساعة.";
+
+            if (total > 24) {
+
+                remainingHours.textContent =
+                    "مجموع الساعات أكبر من 24 ساعة.";
+
+                message.textContent =
+                    "راجع الساعات التي أدخلتها؛ فقد تكون بعض الأنشطة متداخلة أو تم حسابها أكثر من مرة.";
+
+            } else {
+
+                const remaining = 24 - total;
+
+                remainingHours.textContent =
+                    "الساعات غير الموزعة: " + remaining + " ساعة.";
+
+                if (remaining === 0) {
+
+                    message.textContent =
+                        "لقد وزعت ساعات يومك بالكامل. راجع ما إذا كان توزيع الوقت يعكس أولوياتك فعلًا.";
+
+                } else {
+
+                    message.textContent =
+                        "لديك " + remaining +
+                        " ساعة غير موزعة. فكّر في كيفية استخدامها بما يناسب احتياجاتك وأهدافك.";
+                }
+            }
+
+            results.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+        }
+    </script>
+
+</body>
+</html>

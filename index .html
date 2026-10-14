@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIME-RICH, MIND-SHIFT</title>
+    <style>
+        /* GENERAL SETTINGS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f5f7fb;
+            color: #17233f;
+            line-height: 1.8;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* NAVIGATION BAR */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 8%;
+            background-color: #101c35;
+            color: white;
+        }
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: #58a6ff;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        nav a:hover {
+            color: #58a6ff;
+        }
+        /* HERO SECTION */
+        .hero {
+            min-height: 620px;
+            padding: 100px 8%;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(
+                    circle at 85% 25%,
+                    rgba(49, 115, 220, 0.22),
+                    transparent 35%
+                ),
+                linear-gradient(135deg, #101c35, #172b50);
+            color: white;
+        }
+        .hero-content {
+            max-width: 850px;
+        }
+        .tag {
+            display: inline-block;
+            color: #83bdff;
+            border: 1px solid #355b91;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.2;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+        .hero h1 span {
+            color: #58a6ff;
+        }
+        .hero p {
+            max-width: 650px;
+            color: #d3dced;
+            font-size: 17px;
+            margin-bottom: 35px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #3984f5;
+            color: white;
+            padding: 13px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background-color: #66a4ff;
+            transform: translateY(-3px);
+        }
+        /* INTRODUCTION SECTION */
+        .introduction {
+            padding: 90px 8%;
+        }
+        .section-label {
+            color: #3176d8;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .intro-card {
+            max-width: 950px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 12px 40px rgba(16, 28, 53, 0.06);
+            border: 1px solid #e9edf5;
+        }
+        .intro-card p {
+            color: #505d73;
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        .intro-card h3 {
+            color: #172b50;
+            font-size: 23px;
+            margin: 30px 0 15px;
+            text-align: right;
+        }
+        .highlight {
+            background-color: #edf5ff;
+            border-left: 4px solid #3984f5;
+            padding: 20px;
+            margin-top: 25px;
+            color: #172b50;
+            font-weight: 600;
+            text-align: right;
+        }
+        /* FOOTER */
+        footer {
+            background-color: #101c35;
+            color: #c7d1e2;
+            text-align: center;
+            padding: 25px 15px;
+            font-size: 13px;
+        }
+        /* MOBILE RESPONSIVE DESIGN */
+        @media (max-width: 600px) {
+            nav {
+                padding: 18px 5%;
+            }
+            .logo {
+                font-size: 14px;
+            }
+            .hero {
+                min-height: 520px;
+                padding: 75px 6%;
+            }
+            .hero p {
+                font-size: 15px;
+            }
+            .introduction {
+                padding: 60px 5%;
+            }
+            .intro-card {
+                padding: 24px 18px;
+            }
+            .intro-card p {
+                font-size: 15px;
+            }
+            .intro-card h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <div class="logo">
+            TIME-RICH<span>.</span>
+        </div>
+        <a href="#introduction">Introduction</a>
+    </nav>
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="tag">
+                THE SELF-UPGRADE PLAYBOOK
+            </div>
+            <h1>
+                TIME-RICH,<br>
+                <span>MIND-SHIFT.</span>
+            </h1>
+            <p>
+                Your time is your most valuable resource.
+                Learn to manage it consciously, build better habits,
+                and turn your everyday actions into meaningful progress.
+            </p>
+            <a href="#introduction" class="button">
+                Start Your Journey →
+            </a>
+        </div>
+    </header>
+    <!-- INTRODUCTION SECTION -->
+    <main>
+        <section class="introduction" id="introduction">
+            <div class="section-label">
+                INTRODUCTION
+            </div>
+            <div class="intro-card">
+                <p dir="rtl">
+                    الوقت من أهم الموارد اللي يمتلكها الإنسان،
+                    لأنه مورد محدود لا يمكن استرجاعه بعد مروره.
+                    ومع ذلك، كتير مننا بيعدّي عليه يوم كامل من غير
+                    ما يحقق الحاجات اللي فعلًا تهمه، وبيوصل لنهاية
+                    اليوم وهو حاسس إنه كان مشغول، لكن مش بالضرورة
+                    يكون اتقدم خطوة حقيقية ناحية أهدافه.
+                </p>
+                <p dir="rtl">
+                    المشكلة مش دايمًا إننا معندناش وقت كفاية،
+                    لكن أحيانًا بتكون في الطريقة اللي بنستخدم بيها
+                    وقتنا، والأولويات اللي بنختارها، والعادات اللي
+                    بتتحكم في يومنا من غير ما ناخد بالنا.
+                    فممكن ساعات طويلة تضيع في التشتت وتأجيل المهام،
+                    بينما حاجات بسيطة ومهمة تفضل مستنية لوقت تاني.
+                </p>
+                <h3 dir="rtl">
+                    هل المشكلة في الوقت، ولا في طريقة استخدامه؟
+                </h3>
+                <p dir="rtl">
+                    تنظيم الوقت مش معناه إننا نحول يومنا لجدول
+                    مليان بالمهام، أو إننا نشتغل طول الوقت من غير
+                    راحة. المعنى الحقيقي هو إننا نتعلم نحدد أولوياتنا،
+                    ونفرق بين المهم والعاجل، ونخصص وقتًا للتعلم
+                    والتطوير الشخصي والراحة والعلاقات الإنسانية.
+                </p>
+                <p dir="rtl">
+                    ومن هنا بتبدأ رحلة تطوير الذات: إننا نفهم
+                    عاداتنا الحالية، ونكتشف مصادر التشتت، ونحدد
+                    أهدافًا واضحة، وبعدها نحول الأهداف دي لخطوات
+                    صغيرة نقدر نلتزم بيها ونراجع تقدمنا باستمرار.
+                    فالتغيير الحقيقي مش بيحصل في يوم واحد،
+                    لكنه نتيجة قرارات صغيرة بنكررها مع الوقت.
+                </p>
+                <h3 dir="rtl">
+                    من الوعي إلى التغيير
+                </h3>
+                <p dir="rtl">
+                    مشروع TIME-RICH, MIND-SHIFT: THE SELF-UPGRADE
+                    PLAYBOOK بيقدم رحلة عملية تساعدنا نبص لوقتنا
+                    وعاداتنا وأهدافنا بطريقة مختلفة. بدل ما يكون
+                    التركيز على إننا ننجز أكبر عدد من المهام،
+                    هنركز على إننا نختار المهام الصح، ونبني عادات
+                    أفضل، ونستخدم وقتنا بشكل يخدم حياتنا وتطورنا.
+                </p>
+                <div class="highlight" dir="rtl">
+                    وقتك بيمر بالفعل، لكن السؤال الحقيقي هو:
+                    بتستثمره في إيه؟
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+        TIME-RICH, MIND-SHIFT: THE SELF-UPGRADE PLAYBOOK
+        <br>
+        Small changes. Better habits. A more intentional life.
+    </footer>
+</body>
+</html>
